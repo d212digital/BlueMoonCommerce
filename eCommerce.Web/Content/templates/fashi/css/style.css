@@ -1047,7 +1047,7 @@ ol {
 	z-index: 1;
 	height: 433px;
 	overflow: hidden;
-	background-color: #efefef
+	background-color: #fff;
 }
 
 	.single-banner:hover::before {
@@ -1120,7 +1120,7 @@ ol {
 	margin-right: -15px;*/
 	text-align: center;
 	/*padding-top: 285px;*/
-	background-color: #efefef;
+	background-color: #fff;
 	background-repeat: no-repeat;
 	background-position: center;
 	-webkit-background-size: contain;
