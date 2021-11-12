@@ -232,11 +232,11 @@
                                 </strong>
                             </div>
                         }
-                        <div class="pd-share">
+                        @*<div class="pd-share">
                             <div class="pd-social">
                                 @{ Html.RenderPartial("_ShareOptions"); }
                             </div>
-                        </div>
+                        </div>*@
                     </div>
                 </div>
             </div>
@@ -246,7 +246,7 @@
                         @if (currentLanguageProductRecord != null && !string.IsNullOrEmpty(currentLanguageProductRecord.Description))
                         {
                             <li>
-                                <a data-toggle="tab" href="#description-tab" role="tab">@("PP.ProductDetails.Description".Localized())</a>
+                                <a data-toggle="tab" href="#description-tab" role="tab" class="active">@("PP.ProductDetails.Description".Localized())</a>
                             </li>
                         }
                         @if (currentLanguageProductRecord != null && currentLanguageProductRecord.ProductSpecifications != null && currentLanguageProductRecord.ProductSpecifications.Count > 0)
@@ -256,7 +256,7 @@
                             </li>
                         }
                         <li>
-                            <a data-toggle="tab" href="#reviews-tab" role="tab" class="active">@("PP.ProductDetails.Reviews".Localized())</a>
+                            <a data-toggle="tab" href="#reviews-tab" role="tab">@("PP.ProductDetails.Reviews".Localized())</a>
                         </li>
                     </ul>
                 </div>
@@ -264,7 +264,7 @@
                     <div class="tab-content">
                         @if (currentLanguageProductRecord != null && !string.IsNullOrEmpty(currentLanguageProductRecord.Description))
                         {
-                            <div class="tab-pane fade-in" id="description-tab" role="tabpanel">
+                            <div class="tab-pane fade-in active show" id="description-tab" role="tabpanel">
                                 <div class="product-content">
                                     @Html.Raw(currentLanguageProductRecord.Description)
                                 </div>
@@ -276,7 +276,7 @@
                                 @{ Html.RenderPartial("_ProductSpecifications", currentLanguageProductRecord.ProductSpecifications); }
                             </div>
                         }
-                        <div class="tab-pane fade active show" id="reviews-tab" role="tabpanel">
+                        <div class="tab-pane fade" id="reviews-tab" role="tabpanel">
                             @{ Html.RenderAction("ProductComments", "Comments", new { productID = Model.Product.ID, recordSize = 10 }); }
                         </div>
                     </div>

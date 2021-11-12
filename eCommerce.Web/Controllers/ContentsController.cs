@@ -88,5 +88,18 @@ namespace eCommerce.Web.Controllers
 
             return View(model);
         }
+
+        public ActionResult HowToOrder()
+        {
+            PageViewModel model = new PageViewModel
+            {
+                PageTitle = "How To Order",
+                PageDescription = string.Format("Read {0} How to Order.", ConfigurationsHelper.ApplicationName),
+                PageURL = Url.RouteUrl("HowToOrder").ToSiteURL(),
+                PageImageURL = PictureHelper.PageImageURL("terms.jpg")
+            };
+
+            return View(model);
+        }
     }
 }

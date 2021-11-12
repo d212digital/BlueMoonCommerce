@@ -4696,7 +4696,7 @@ ol {
 .product-gallery-carousel {
 	overflow: hidden;
 	position: relative;
-	background: #efefef;
+	background: #fff;
 	display: flex;
 }
 
