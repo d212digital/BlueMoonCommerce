@@ -102,9 +102,9 @@ namespace eCommerce.Web
                         "~/content/lib/bootstrap-4.4.1/js/bootstrap.min.js",
                         "~/content/lib/ms-dropdown-3.5.2/jquery.dd.min.js",
                         "~/Content/lib/darkreader-4.9.16/darkreader.min.js",
-                        "~/content/templates/sbadmin2/js/demo/chart-area-demo.js",
-                        "~/content/templates/sbadmin2/js/demo/chart-bar-demo.js",
-                        "~/content/templates/sbadmin2/js/demo/chart-pie-demo.js",
+                        "~/Content/templates/sbadmin2/js/demo/chart-area-demo.js",
+                        "~/Content/templates/sbadmin2/js/demo/chart-bar-demo.js",
+                        "~/Content/templates/sbadmin2/js/demo/chart-pie-demo.js",
                         "~/content/js/dashboard.js"));
             #endregion
         }
