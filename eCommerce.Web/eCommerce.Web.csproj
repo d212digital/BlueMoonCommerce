@@ -4942,6 +4942,7 @@
     <None Include="Properties\PublishProfiles\FolderPublish.pubxml" />
     <None Include="Properties\PublishProfiles\Web_Deploy.pubxml" />
     <Content Include="Views\Shared\_ExternalSocialScripts.cshtml" />
+    <Content Include="Views\Contents\HowToOrder.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\eCommerce.Data\eCommerce.Data.csproj">
