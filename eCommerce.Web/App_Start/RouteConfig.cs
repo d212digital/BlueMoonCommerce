@@ -705,7 +705,7 @@ namespace eCommerce.Web
 
             routes.MapRoute(
                 name: "LeadsDefault",
-                url: "{controller}/{action}/{id}",
+                url: "index",
                 defaults: new { controller = "WebLeadsAreaController", action = "Index" },
                 namespaces: new[] { "eCommerce.Web.Controllers" }
             );
