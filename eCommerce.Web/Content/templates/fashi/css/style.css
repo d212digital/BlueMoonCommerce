@@ -2568,7 +2568,7 @@ ol {
 	}
 
 .product-content {
-	overflow: scroll;
+	overflow: hidden;
 }
 
 	.product-content h5 {
