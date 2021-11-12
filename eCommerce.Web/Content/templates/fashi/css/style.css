@@ -1252,10 +1252,11 @@ ol {
 		overflow: hidden;
 		position: relative;
 		padding: 10px;
-		background: #efefef;
+		background: #fff;
 		height: 260px;
 		align-items: center;
 		display: flex;
+		border-color: #b2b2b2;
 		cursor: pointer;
 	}
 

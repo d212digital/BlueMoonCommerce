@@ -702,6 +702,13 @@ namespace eCommerce.Web
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
                 namespaces: new[] { "eCommerce.Web.Controllers" }
             );
+
+            routes.MapRoute(
+                name: "LeadsDefault",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "WebLeadsAreaController", action = "Index" },
+                namespaces: new[] { "eCommerce.Web.Controllers" }
+            );
         }
     }
 }

@@ -262,6 +262,7 @@
     <Compile Include="Controllers\PublicBaseController.cs" />
     <Compile Include="Controllers\SharedController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Controllers\WebLeadsAreaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -4943,6 +4944,7 @@
     <None Include="Properties\PublishProfiles\Web_Deploy.pubxml" />
     <Content Include="Views\Shared\_ExternalSocialScripts.cshtml" />
     <Content Include="Views\Contents\HowToOrder.cshtml" />
+    <Content Include="Views\WebLeadsArea\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\eCommerce.Data\eCommerce.Data.csproj">
