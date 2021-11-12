@@ -1,4 +1,5 @@
 ﻿@model ProductActionViewModel
+  
 @{
     if (Model != null)
     {
@@ -158,7 +159,7 @@
                         }
                     </select>
                 </div>
-
+                
                 <div class="form-group">
                     <label>
                         @("Dashboard.Products.Action.SKU".Localized())
@@ -310,36 +311,48 @@
                             @("Dashboard.Products.Action.ProductInActive".Localized())
                         </label>
                     </div>
+
+                    <div class="form-group">
+                        <div class="form-check" title="To mark this Product as a lead only product.">
+                            <input type="checkbox" name="IsLead" value="true" class="form-check-input" id="IsLead" @(Model.IsLead ? "checked" : string.Empty)/>
+                            <input type="hidden" name="IsLead" value="false">
+
+                            <label class="form-check-label" for="IsLead">
+                                @("Dashboard.Products.Action.ProductIsLead".Localized())
+                            </label>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="form-group mb-0">
+                        @if (Model.ProductID > 0)
+                        {
+                            <button class="btn btn-success" type="submit" id="actionButton">
+                                <i class="fas fa-edit mr-1"></i>
+                                @("Dashboard.Products.Update".Localized())
+                            </button>
+                            <button class="deleteButton btn btn-danger" type="button" data-id="@Model.ProductID">
+                                <i class="fas fa-trash-alt mr-1"></i>
+                                @("Dashboard.Products.Delete".Localized())
+                            </button>
+                        }
+                        else
+                        {
+                            <button class="btn btn-success" type="submit" id="actionButton">
+                                <i class="fas fa-plus mr-1"></i>
+                                @("Dashboard.Products.Save".Localized())
+                            </button>
+                        }
+                        <a class="btn btn-secondary" href="@Url.ListAction("Products")">
+                            <i class="fas fa-angle-double-left mr-1"></i>
+                            @("Dashboard.Products.Cancel".Localized())
+                        </a>
+                    </div>
                 </div>
-                <hr />
-                <div class="form-group mb-0">
-                    @if (Model.ProductID > 0)
-                    {
-                        <button class="btn btn-success" type="submit" id="actionButton">
-                            <i class="fas fa-edit mr-1"></i>
-                            @("Dashboard.Products.Update".Localized())
-                        </button>
-                        <button class="deleteButton btn btn-danger" type="button" data-id="@Model.ProductID">
-                            <i class="fas fa-trash-alt mr-1"></i>
-                            @("Dashboard.Products.Delete".Localized())
-                        </button>
-                    }
-                    else
-                    {
-                        <button class="btn btn-success" type="submit" id="actionButton">
-                            <i class="fas fa-plus mr-1"></i>
-                            @("Dashboard.Products.Save".Localized())
-                        </button>
-                    }
-                    <a class="btn btn-secondary" href="@Url.ListAction("Products")">
-                        <i class="fas fa-angle-double-left mr-1"></i>
-                        @("Dashboard.Products.Cancel".Localized())
-                    </a>
-                </div>
-            </div>
+            </div>  
         </div>
     </form>
 </div>
+
 
 <div id="imageTemplate" style="display:none">
     <div class="thisImage col-md-3">

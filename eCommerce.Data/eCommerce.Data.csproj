@@ -63,6 +63,10 @@
     <Compile Include="Migrations\202008280328116_init.designer.cs">
       <DependentUpon>202008280328116_init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202111121147031_product-islead.cs" />
+    <Compile Include="Migrations\202111121147031_product-islead.designer.cs">
+      <DependentUpon>202111121147031_product-islead.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -79,6 +83,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202008280328116_init.resx">
       <DependentUpon>202008280328116_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111121147031_product-islead.resx">
+      <DependentUpon>202111121147031_product-islead.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

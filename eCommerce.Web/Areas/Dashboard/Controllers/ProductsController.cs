@@ -79,7 +79,7 @@ namespace eCommerce.Web.Areas.Dashboard.Controllers
                 model.Supplier = product.Supplier;
 
                 model.InActive = !product.IsActive;
-
+              
                 model.ProductRecordID = currentLanguageRecord.ID;
                 model.Name = currentLanguageRecord.Name;
                 model.Summary = currentLanguageRecord.Summary;
@@ -124,6 +124,7 @@ namespace eCommerce.Web.Areas.Dashboard.Controllers
                     product.StockQuantity = model.StockQuantity;
 
                     product.isFeatured = model.isFeatured;
+                    product.IsLead = model.IsLead;
                     product.ModifiedOn = DateTime.Now;
 
                     if (!string.IsNullOrEmpty(model.ProductPictures))
@@ -154,6 +155,7 @@ namespace eCommerce.Web.Areas.Dashboard.Controllers
                         throw new Exception("Dashboard.Products.Action.Validation.UnableToUpdateProduct".LocalizedString());
                     }
 
+                   
                     var currentLanguageRecord = product.ProductRecords.FirstOrDefault(x => x.LanguageID == AppDataHelper.CurrentLanguage.ID);
 
                     var isNewRecord = false;
@@ -226,6 +228,7 @@ namespace eCommerce.Web.Areas.Dashboard.Controllers
                         StockQuantity = model.StockQuantity,
 
                         isFeatured = model.isFeatured,
+                        IsLead = model.IsLead,
                         ModifiedOn = DateTime.Now
                     };
 
@@ -324,6 +327,7 @@ namespace eCommerce.Web.Areas.Dashboard.Controllers
 
                 isFeatured = formCollection["isFeatured"].Contains("true"),
                 InActive = formCollection["InActive"].Contains("true"),
+                IsLead = formCollection["IsLead"].Contains("true"),
                 ProductPictures = formCollection["ProductPictures"],
                 ThumbnailPicture = !string.IsNullOrEmpty(formCollection["ThumbnailPicture"]) ? int.Parse(formCollection["ThumbnailPicture"]) : 0,
 

@@ -191,6 +191,13 @@ namespace eCommerce.Web
             );
 
             routes.MapRoute(
+                name: "HowToOrder",
+                url: "how-to-order",
+                defaults: new { area = "", controller = "Contents", action = "HowToOrder" },
+                namespaces: new[] { "eCommerce.Web.Controllers" }
+            );
+
+            routes.MapRoute(
                 name: "LanguageBased_HowToOrder",
                 url: "{lang}/how-to-order",
                 defaults: new { area = "", controller = "Contents", action = "HowToOrder" },

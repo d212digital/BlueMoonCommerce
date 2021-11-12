@@ -25,6 +25,8 @@ namespace eCommerce.Entities
 
         public int StockQuantity { get; set; }
 
+        public bool? IsLead { get; set; }
+
         public virtual List<ProductPicture> ProductPictures { get; set; }
 
         public virtual List<ProductRecord> ProductRecords { get; set; }
