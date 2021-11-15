@@ -7,6 +7,12 @@
   Created: Colorlib
 ******************************************************************/
 
+/*@media only screen and (min-width: 640px) {
+	#menuToggle {
+		display: block;
+	}
+}*/
+
 html,
 body {
 	height: 100%;

@@ -9,11 +9,6 @@
  * prefixes.
  */
 
-@media only screen and (max-width: 768px) {
-    #menuToggle {
-        display: none;
-    }
-}
 body {
     margin: 0;
     padding: 0;

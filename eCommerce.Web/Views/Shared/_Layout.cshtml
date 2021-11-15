@@ -12,7 +12,6 @@
 <html lang="@AppDataHelper.CurrentLanguage.ShortCode.ToLower()" @(AppDataHelper.IsRTL ? "dir=rtl" : string.Empty)>
 <head>
     @Html.Partial("_MetaTags", baseModel)
-    
     @Html.Partial("_HeaderStylesScripts")
     @RenderSection("IncludeHeaderStylesScripts", false)
 </head>
