@@ -9,7 +9,7 @@ namespace eCommerce.Web.Controllers
     public class WebLeadsController : Controller
     {
         // GET: WebLeads
-        public ActionResult Index()
+        public ActionResult WebIndex()
         {
             return View();
         }
@@ -34,7 +34,7 @@ namespace eCommerce.Web.Controllers
             {
                 // TODO: Add insert logic here
 
-                return RedirectToAction("Index");
+                return RedirectToAction("WebIndex");
             }
             catch
             {
@@ -56,7 +56,7 @@ namespace eCommerce.Web.Controllers
             {
                 // TODO: Add update logic here
 
-                return RedirectToAction("Index");
+                return RedirectToAction("WebIndex");
             }
             catch
             {
@@ -78,7 +78,7 @@ namespace eCommerce.Web.Controllers
             {
                 // TODO: Add delete logic here
 
-                return RedirectToAction("Index");
+                return RedirectToAction("WebIndex");
             }
             catch
             {
