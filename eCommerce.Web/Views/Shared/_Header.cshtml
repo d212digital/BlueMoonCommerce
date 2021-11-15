@@ -98,7 +98,7 @@
 
                 <div class="login-panel">
                     <a href="@Url.UserProfile()" title="@hiUserMessage">
-                        @Html.UserAvatar(User.Identity.GetUserPicture(), "image rounded-circle", style: "width: 20px; height: 20px", alt: hiUserMessage)
+                        @Html.UserAvatar(User.Identity.GetUserPicture(), "image rounded-circle", style: "width: 18px; height: 18px", alt: hiUserMessage)
                     </a>
                 </div>
             }
@@ -106,7 +106,7 @@
             {
                 <div class="login-panel login-panel-last">
                     <a href="@Url.Login()" title="@("PP.Header.Menu.Account".Localized())">
-                        <i class="fas fa-user"></i>
+                        <i class="fas fa-user-cog"></i>
                     </a>
                 </div>
             }
