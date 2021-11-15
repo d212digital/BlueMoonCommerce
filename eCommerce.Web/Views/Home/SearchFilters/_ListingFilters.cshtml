@@ -35,7 +35,7 @@
             </div>
         </div>
         <input type="hidden" name="sortBy" value="@Model.SortBy" @(string.IsNullOrEmpty(Model.SortBy) ? "disabled=disabled" : string.Empty) />
-        <input type="hidden" name="recordSize" value="@Model.PageSize" @(!Model.PageSize.HasValue || Model.PageSize == (int)RecordSizeEnums.Size8 ? "disabled=disabled" : string.Empty) />
+        <input type="hidden" name="recordSize" value="@Model.PageSize" @(!Model.PageSize.HasValue || Model.PageSize == (int)RecordSizeEnums.Size10 ? "disabled=disabled" : string.Empty) />
     </div>
     <script>
         $("#sortBy").change(function () {

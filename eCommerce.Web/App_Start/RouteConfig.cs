@@ -702,6 +702,24 @@ namespace eCommerce.Web
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
                 namespaces: new[] { "eCommerce.Web.Controllers" }
             );
+
+            // Adding the leads section to the frontend of the website
+
+            //routes.MapRoute(
+            //    name: "Home",
+            //    url: "",
+            //    defaults: new { controller = "Home", action = "Index" },
+            //    namespaces: new[] { "eCommerce.Web.Controllers" }
+            //);
+
+            //routes.MapRoute(
+            //    name: "Home",
+            //    url: "{lang}",
+            //    defaults: new { controller = "Home", action = "Index" },
+            //    namespaces: new[] { "eCommerce.Web.Controllers" }
+            //);
+
+
         }
     }
 }
