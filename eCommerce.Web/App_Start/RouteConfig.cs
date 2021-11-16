@@ -682,6 +682,22 @@ namespace eCommerce.Web
                 namespaces: new[] { "eCommerce.Web.Controllers" }
             );
 
+            //   Adding the leads section to the frontend of the website
+
+            routes.MapRoute(
+                name: "WebLeads",
+                url: "web",
+                defaults: new { controller = "WebLeads", action = "Index" },
+                namespaces: new[] { "eCommerce.Web.Controllers" }
+            );
+
+            routes.MapRoute(
+                name: "LanguageBased_WebLeads",
+                url: "{lang}/web",
+                defaults: new { controller = "WebLeads", action = "Index" },
+                namespaces: new[] { "eCommerce.Web.Controllers" }
+            );
+
             routes.MapRoute(
                 name: "Home",
                 url: "",
@@ -696,30 +712,13 @@ namespace eCommerce.Web
                 namespaces: new[] { "eCommerce.Web.Controllers" }
             );
 
+            //// the deafult route must be the last in the route config
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
                 namespaces: new[] { "eCommerce.Web.Controllers" }
             );
-
-            // Adding the leads section to the frontend of the website
-
-            //routes.MapRoute(
-            //    name: "Home",
-            //    url: "",
-            //    defaults: new { controller = "Home", action = "Index" },
-            //    namespaces: new[] { "eCommerce.Web.Controllers" }
-            //);
-
-            //routes.MapRoute(
-            //    name: "Home",
-            //    url: "{lang}",
-            //    defaults: new { controller = "Home", action = "Index" },
-            //    namespaces: new[] { "eCommerce.Web.Controllers" }
-            //);
-
-
         }
     }
 }

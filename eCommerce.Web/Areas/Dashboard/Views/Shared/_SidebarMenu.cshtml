@@ -8,18 +8,39 @@
         </div>
     </li>
     <hr class="sidebar-divider">
-    @*<li class="nav-item">
-        <a class="nav-link" href="@Url.Home()">
-            <i class="mr-1 fas fa-home"></i>
-            <span>@("Dashboard.Menu.Home".Localized())</span>
-        </a>
-    </li>*@
     <li class="nav-item @Html.MenuItemClass("Dashboard", "Index")">
         <a class="nav-link" href="@Url.Dashboard()">
-            <i class="fas fa-user-shield"></i>
+            <i class="fas fa-tachometer-alt"></i>
             <span>@("Dashboard.Menu.Dashboard".Localized())</span>
         </a>
     </li>
+    <hr class="sidebar-divider">
+    <div class="sidebar-heading">
+        Order Management
+    </div>
+    <li class="nav-item @Html.MenuItemClass("Orders")">
+        <a class="nav-link" href="@Url.ListAction("Orders")">
+            <i class="fas fa-funnel-dollar mr-1"></i>
+            <span>@("Dashboard.Menu.Orders".Localized())</span>
+        </a>
+    </li>
+    <li class="nav-item @Html.MenuItemClass("Users")">
+        <a class="nav-link" href="@Url.ListAction("Users")">
+            <i class="mr-1 fas fa-users"></i>
+            <span>@("Dashboard.Menu.Users.Customers".Localized())</span>
+        </a>
+    </li>
+    <li class="nav-item @Html.MenuItemClass("Comments")">
+        <a class="nav-link" href="@Url.ListAction("Comments")">
+            <i class="mr-1 fas fa-comments"></i>
+            <span>@("Dashboard.Menu.Comments".Localized())</span>
+        </a>
+    </li>
+    <hr class="sidebar-divider">
+    <!-- Heading -->
+    <div class="sidebar-heading">
+        Product Management
+    </div>
     <li class="nav-item @Html.MenuItemClass("Categories")">
         <a class="nav-link" href="@Url.ListAction("Categories")">
             <i class="mr-1 fas fa-sitemap"></i>
@@ -32,24 +53,28 @@
             <span>@("Dashboard.Menu.Products".Localized())</span>
         </a>
     </li>
+
+    <hr class="sidebar-divider">
+    <div class="sidebar-heading">
+        Marketing
+    </div>
     <li class="nav-item @Html.MenuItemClass("Promos")">
         <a class="nav-link" href="@Url.ListAction("Promos")">
             <i class="fas fa-tags mr-1"></i>
             <span>@("Dashboard.Menu.Promos".Localized())</span>
         </a>
     </li>
-    <li class="nav-item @Html.MenuItemClass("Orders")">
-        <a class="nav-link" href="@Url.ListAction("Orders")">
-            <i class="fas fa-funnel-dollar mr-1"></i>
-            <span>@("Dashboard.Menu.Orders".Localized())</span>
+    <li class="nav-item @Html.MenuItemClass("Dashboard", "NewsletterSubscribers")">
+        <a class="nav-link" href="@Url.NewsletterSubscribers()">
+            <i class="mr-1 fas fa-newspaper"></i>
+            <span>@("Dashboard.Menu.NewsletterSubscribers".Localized())</span>
         </a>
     </li>
-    <li class="nav-item @Html.MenuItemClass("Comments")">
-        <a class="nav-link" href="@Url.ListAction("Comments")">
-            <i class="mr-1 fas fa-comments"></i>
-            <span>@("Dashboard.Menu.Comments".Localized())</span>
-        </a>
-    </li>
+
+    <hr class="sidebar-divider">
+    <div class="sidebar-heading">
+        Admin
+    </div>
     <li class="nav-item @Html.MenuItemClass("Users")">
         <a class="nav-link" href="@Url.ListAction("Users")">
             <i class="mr-1 fas fa-users"></i>
@@ -60,12 +85,6 @@
         <a class="nav-link" href="@Url.ListAction("Roles")">
             <i class="mr-1 fas fa-users-cog"></i>
             <span>@("Dashboard.Menu.Roles".Localized())</span>
-        </a>
-    </li>
-    <li class="nav-item @Html.MenuItemClass("Dashboard", "NewsletterSubscribers")">
-        <a class="nav-link" href="@Url.NewsletterSubscribers()">
-            <i class="mr-1 fas fa-newspaper"></i>
-            <span>@("Dashboard.Menu.NewsletterSubscribers".Localized())</span>
         </a>
     </li>
     <li class="nav-item @Html.MenuItemClass("Languages")">
