@@ -1,8 +1,21 @@
 ﻿@model PageViewModel
 @{
-    ViewBag.Title = "Web";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_WebLayout.cshtml";
 }
 
-<h2>Im on the web .. yoohoo</h2>
+@{
+    if (Model != null)
+    {
+        Model.PageTitle = "PP.Home.Title".LocalizedString();
+        Model.PageDescription = "PP.Home.Description".LocalizedString();
+        Model.PageURL = Url.Home();
+        
+    }
+
+    //<img src="~/Content/images/site/banner-2.png" />
+
+    Html.RenderAction("HomeSliders", "Home");
+  
+}
 

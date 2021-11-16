@@ -1584,7 +1584,7 @@ ol {
 -----------------------*/
 
 .partner-logo {
-	background: #303030;
+	background: #ebebeb;
 	padding: 38px 0;
 }
 
@@ -4808,7 +4808,7 @@ ol {
 		/*max-height: 100%;*/
 	}
 
-.home-carousel-next {
+/*.home-carousel-next {
 	background-color: rgba(0, 0, 0, .5);
 	width: 5%;
 }
@@ -4816,7 +4816,7 @@ ol {
 .home-carousel-prev {
 	background-color: rgba(0, 0, 0, .5);
 	width: 5%;
-}
+}*/
 
 .home-carousel-indicators {
 	bottom: 10px;
@@ -4842,7 +4842,9 @@ ol {
 }
 
 .carousel-caption {
-	background-color: rgba(0, 0, 0, .7);
+	background-color: #000;	
+	opacity: 0.8;
+	padding: 6px
 }
 
 	.carousel-caption h5 {
