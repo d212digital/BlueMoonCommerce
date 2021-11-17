@@ -26,6 +26,22 @@ namespace eCommerce.Shared.Helpers
             return routeURL.ToLower();
         }
 
+        public static string Web(this UrlHelper helper)
+        {
+            var routeValues = new RouteValueDictionary();
+
+            string routeURL = string.Empty;
+
+            if (ConfigurationsHelper.EnableMultilingual)
+            {
+                routeURL = helper.RouteUrl("LanguageBased_WebLeads");
+            }
+            else routeURL = helper.RouteUrl("WebLeads");
+
+            routeURL = HttpUtility.UrlDecode(routeURL, System.Text.Encoding.UTF8);
+            return routeURL.ToLower();
+        }
+
         public static string StaticPage(this UrlHelper helper, string pageid)
         {
             var routeValues = new RouteValueDictionary();
