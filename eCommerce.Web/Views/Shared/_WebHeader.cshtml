@@ -72,26 +72,13 @@
 
         </div>
     </div>
-    @*@if (!LanguagesHelper.LanguagesWithResources.Contains(AppDataHelper.CurrentLanguage) && ConfigurationsHelper.Environment == Environments.DEMO)
-        {
-            <div class="text-center alert alert-danger rounded-0 mb-0" role="alert" dir="ltr">
-                Language text resources are missing for selected language. Please upload Language Pack for this language. See more details <u><a href="#" target="_blank">here <i class="fas fa-external-link-alt mx-1 dont-transform"></i></a></u>.
-                <button type="button" class="close" data-dismiss="alert">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        }*@
-    <div class="container">
+     <div class="container">
         <div class="inner-header">
             <div class="row">
                 <div class="col-lg-3 col-md-3">
                     <div class="logo">
                         <a href="@Url.Web()">
-                            <img src="~/Content/images/site/logo2.png" />
-                            <!--<h4>-->
-                            @* TODO: We should be able to localize the application name along with Logo *@
-                            <!--@ConfigurationsHelper.ApplicationName
-                            </h4>-->
+                            <img src="~/Content/images/site/logo2.png" />                           
                         </a>
                     </div>
                 </div>
