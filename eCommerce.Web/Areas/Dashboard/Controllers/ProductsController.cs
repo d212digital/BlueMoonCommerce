@@ -79,6 +79,7 @@ namespace eCommerce.Web.Areas.Dashboard.Controllers
                 model.Supplier = product.Supplier;
 
                 model.InActive = !product.IsActive;
+                model.IsLead = (bool)product.IsLead;
               
                 model.ProductRecordID = currentLanguageRecord.ID;
                 model.Name = currentLanguageRecord.Name;
