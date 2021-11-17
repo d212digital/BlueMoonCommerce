@@ -12,6 +12,8 @@ namespace eCommerce.Entities
         public virtual Category ParentCategory { get; set; }
 
         public bool isFeatured { get; set; }
+
+        public bool IsLead { get; set; }
         public string SanitizedName { get; set; }
 
         public int DisplaySeqNo { get; set; }
