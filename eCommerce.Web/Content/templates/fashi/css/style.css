@@ -13,6 +13,30 @@
 	}
 }
 
+@media (min-width: 576px) {
+	.card-columns {
+		column-count: 2;
+	}
+}
+
+@media (min-width: 768px) {
+	.card-columns {
+		column-count: 3;
+	}
+}
+
+@media (min-width: 992px) {
+	.card-columns {
+		column-count: 4;
+	}
+}
+
+@media (min-width: 1200px) {
+	.card-columns {
+		column-count: 5;
+	}
+}
+
 html,
 body {
 	height: 100%;
@@ -1543,7 +1567,7 @@ ol {
 
 .benefit-items {
 	border: 1px solid #ebebeb;
-	margin-top: 45px;
+	margin-top: 15px;
 }
 
 	.benefit-items .single-benefit {
@@ -1585,7 +1609,7 @@ ol {
 
 .partner-logo {
 	background: #ebebeb;
-	padding: 38px 0;
+	padding: 28px 0;
 }
 
 .logo-carousel .logo-item {

@@ -140,6 +140,14 @@
                             @("Dashboard.Categories.Action.Featured".Localized())
                         </label>
                     </div>
+                    <div class="form-check">
+                        <input type="checkbox" name="IsLead" value="true" class="form-check-input" id="isFeatured" @(Model.IsLead ? "checked" : string.Empty)>
+                        <input type="hidden" name="IsLead" value="false">
+
+                        <label class="form-check-label" for="IsLead">
+                            @("Dashboard.Categories.Action.WebOnly".Localized())
+                        </label>
+                    </div>
                 </div>
 
                 <hr />

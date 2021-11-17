@@ -66,5 +66,19 @@ namespace eCommerce.Web.Controllers
 
             return PartialView("_ProductsByFeaturedCategories", model);
         }
+        public ActionResult IsLead (int id)
+        {
+            CategoriesMenuViewModel model = new CategoriesMenuViewModel();
+
+            var category = CategoriesService.Instance.GetCategoryByID(id);
+            if (category != null)
+            {
+                return category.IsLead == false ? Json(true, JsonRequestBehavior.AllowGet) : Json(false, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(false, JsonRequestBehavior.AllowGet);
+            }
+        }
     }
 }

@@ -100,6 +100,11 @@ namespace eCommerce.Services
             return categoryRecords.ToList();
         }
 
+        public object GetCategory(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<CategoryRecord> GetCategoriesRecordsByLanguage(int languageID, int? pageNo = 1, int? recordSize = 0)
         {
             var context = DataContextHelper.GetNewContext();

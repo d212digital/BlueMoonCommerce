@@ -52,6 +52,7 @@ namespace eCommerce.Web.Areas.Dashboard.Controllers
                 model.CategoryID = category.ID;
                 model.ParentCategoryID = category.ParentCategoryID.HasValue ? category.ParentCategoryID.Value : 0;
                 model.isFeatured = category.isFeatured;
+                model.IsLead = category.IsLead;
                 model.SanitizedName = category.SanitizedName;
                 model.Picture = category.Picture;
                 model.PictureID = category.PictureID;
@@ -95,6 +96,7 @@ namespace eCommerce.Web.Areas.Dashboard.Controllers
 
                     category.PictureID = model.PictureID;
                     category.isFeatured = model.isFeatured;
+                    category.IsLead = model.IsLead;
                     category.SanitizedName = !string.IsNullOrEmpty(model.SanitizedName) ? model.SanitizedName : model.Name.SanitizeLowerString();
 
                     category.ModifiedOn = DateTime.Now;
@@ -153,6 +155,7 @@ namespace eCommerce.Web.Areas.Dashboard.Controllers
 
                     category.PictureID = model.PictureID;
                     category.isFeatured = model.isFeatured;
+                    category.IsLead = model.IsLead;
                     category.SanitizedName = !string.IsNullOrEmpty(model.SanitizedName) ? model.SanitizedName : model.Name.SanitizeLowerString();
 
                     var currentLanguageCategoryRecord = new CategoryRecord
