@@ -2836,6 +2836,7 @@
     <Content Include="Content\lib\sweetalert2-9.10.7\sweetalert2.min.css" />
     <Content Include="Content\lib\sweetalert2-9.10.7\sweetalert2.min.js" />
     <Content Include="Content\templates\fashi\css\bootstrap.min.css" />
+    <Content Include="Content\templates\fashi\css\hamburgermenu.css" />
     <Content Include="Content\templates\fashi\css\jquery-ui.min.css" />
     <Content Include="Content\templates\fashi\css\nice-select.css" />
     <Content Include="Content\templates\fashi\css\owl.carousel.min.css" />
@@ -4949,6 +4950,7 @@
     <Content Include="Views\Shared\_WebLayout.cshtml" />
     <Content Include="Views\Shared\_WebHeader.cshtml" />
     <Content Include="Views\Shared\_WebFooter.cshtml" />
+    <Content Include="Views\Shared\_WebHeaderStylesScripts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\eCommerce.Data\eCommerce.Data.csproj">

@@ -20,7 +20,18 @@ namespace eCommerce.Web
                       "~/content/templates/fashi/css/slicknav.min.css",
                       "~/content/templates/fashi/css/style.css",
                       "~/content/css/site.css"));
-            
+
+            //Public Portal CSS Web Bundles
+            bundles.Add(new StyleBundle("~/bundles/content/web/css").NonOrdering().Include(
+                      "~/content/lib/bootstrap-4.4.1/css/bootstrap.min.css",
+                      "~/content/templates/fashi/css/owl.carousel.min.css",
+                      "~/content/templates/fashi/css/nice-select.css",
+                      "~/content/lib/jquery-ui-1.12.1/jquery-ui.min.css",
+                      "~/content/templates/fashi/css/slicknav.min.css",
+                      "~/content/templates/fashi/css/style.css",
+                      "~/content/templates/fashi/css/hamburgermenu.css",
+                      "~/content/css/site.css"));
+
             //Public Portal JavaScript/jQuery for Header
             bundles.Add(new ScriptBundle("~/bundles/content/hscripts").NonOrdering().Include(
                         "~/content/lib/jquery-3.4.1/jquery.min.js",

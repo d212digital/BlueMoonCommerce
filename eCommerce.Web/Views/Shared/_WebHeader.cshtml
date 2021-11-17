@@ -2,40 +2,6 @@
 
 <header class="header-section">
     <div class="header-top">
-        <nav role="navigation">
-            <div id="menuToggle">
-                <!--
-                A fake / hidden checkbox is used as click reciever,
-                so you can use the :checked selector on it.
-                -->
-                <input type="checkbox" />
-
-                <!--
-                Some spans to act as a hamburger.
-
-                They are acting like a real hamburger,
-                not that McDonalds stuff.
-                -->
-                <span></span>
-                <span></span>
-                <span></span>
-
-                <!--
-                Too bad the menu has to be inside of the button
-                but hey, it's pure CSS magic.
-                -->
-                <ul id="menu">
-                    <li class=""><a href="@Url.Home()">Online Shop</a></li>
-                    <li class="@Html.MenuItemClass("Orders", "Tracking")"><a href="@Url.OrderTrack()">@("PP.Header.Menu.Tracking".Localized())</a></li>
-                    <li><a href="@Url.UserProfile(tab: "")">@("PP.Footer.Account.MyProfile".Localized())</a></li>
-                    @*<li><a href="@Url.StaticPage("HowToOrder")">@("PP.Header.Information.HowToOrder".Localized())</a></li>
-                        <li><a href="@Url.StaticPage("ContactUs")">@("PP.Footer.Information.ContactUs".Localized())</a></li>
-                        <li><a href="@Url.StaticPage("AboutUs")">@("PP.Footer.Information.AboutUs".Localized())</a></li>*@
-                </ul>
-
-            </div>
-
-        </nav>
         <div class="container">
             <div class="text-center mt-3 mb-3">
                 @*@if (!string.IsNullOrEmpty(ConfigurationsHelper.Email))
@@ -57,7 +23,7 @@
                     </div>
                 }
             </div>
-            @if (AppDataHelper.IsMobile && !string.IsNullOrEmpty(ConfigurationsHelper.PhoneNumber))
+            @*@if (AppDataHelper.IsMobile && !string.IsNullOrEmpty(ConfigurationsHelper.PhoneNumber))
             {
                 <div class="d-sm-block d-md-none" style="display:inline-block; margin-top: 6px">
                     <div class="phone-service">
@@ -67,21 +33,20 @@
                         </a>
                     </div>
                 </div>
-            }
-
+            }*@
 
         </div>
     </div>
-     <div class="container">
+    <div class="container">
         <div class="inner-header">
             <div class="row">
                 <div class="col-lg-3 col-md-3">
                     <div class="logo">
                         <a href="@Url.Web()">
-                            <img src="~/Content/images/site/logo2.png" />                           
+                            <img src="~/Content/images/site/logo2.png" />
                         </a>
                     </div>
-                </div>
+                </div>           
                 @*<div class="col-lg-6 col-md-6">
                         <form class="advanced-search" action="@Url.SearchProducts()">
                             <div class="input-group">
@@ -116,34 +81,146 @@
         </div>
     </div>
 
+    <!-- Start new hamburger menu -->
+
+    <div class="button">
+        <a class="btn-open" href="#"></a>
+    </div>
+    <div class="overlay">
+        <div class="wrap">
+            <ul class="wrap-nav">
+                <li>
+                    <a href="#">About</a>
+                    <ul>
+                        <li><a href="#">About Company</a></li>
+                        <li><a href="#">Designers</a></li>
+                        <li><a href="#">Developers</a></li>
+                        <li><a href="#">Pets</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                    <ul>
+                        <li><a href="#">Web Design</a></li>
+                        <li><a href="#">Development</a></li>
+                        <li><a href="#">Apps</a></li>
+                        <li><a href="#">Graphic design</a></li>
+                        <li><a href="#">Branding</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Work</a>
+                    <ul>
+                        <li><a href="#">Web</a></li>
+                        <li><a href="#">Graphic</a></li>
+                        <li><a href="#">Apps</a></li>
+                        <li><a href="#">Web</a></li>
+                        <li><a href="#">Graphic</a></li>
+                        <li><a href="#">Apps</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                    <ul>
+                        <li><a href="#">Web</a></li>
+                        <li><a href="#">Graphic</a></li>
+                        <li><a href="#">Apps</a></li>
+                        <li><a href="#">Web</a></li>
+                        <li><a href="#">Graphic</a></li>
+                        <li><a href="#">Apps</a></li>
+                    </ul>
+                </li>               
+            </ul>
+            <ul class="wrap-nav">
+                <li>
+                    <a href="#">About</a>
+                    <ul>
+                        <li><a href="#">About Company</a></li>
+                        <li><a href="#">Designers</a></li>
+                        <li><a href="#">Developers</a></li>
+                        <li><a href="#">Pets</a></li>
+                        <li><a href="#">Pets</a></li>
+                        <li><a href="#">Pets</a></li>                        
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                    <ul>
+                        <li><a href="#">Web Design</a></li>
+                        <li><a href="#">Development</a></li>
+                        <li><a href="#">Apps</a></li>
+                        <li><a href="#">Graphic design</a></li>
+                        <li><a href="#">Branding</a></li>
+                        <li><a href="#">Branding</a></li>                       
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Work</a>
+                    <ul>
+                        <li><a href="#">Web</a></li>
+                        <li><a href="#">Graphic</a></li>
+                        <li><a href="#">Apps</a></li>
+                        <li><a href="#">Apps</a></li>
+                        <li><a href="#">Apps</a></li>
+                        <li><a href="#">Apps</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Work</a>
+                    <ul>
+                        <li><a href="#">Web</a></li>
+                        <li><a href="#">Graphic</a></li>
+                        <li><a href="#">Apps</a></li>
+                        <li><a href="#">Web</a></li>
+                        <li><a href="#">Graphic</a></li>
+                        <li><a href="#">Apps</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="social">
+                <a href="#">
+                    <div class="social-icon">
+                        <i class="fa fa-facebook"></i>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="social-icon">
+                        <i class="fa fa-twitter"></i>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="social-icon">
+                        <i class="fa fa-codepen"></i>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="social-icon">
+                        <i class="fa fa-behance"></i>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="social-icon">
+                        <i class="fa fa-dribbble"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
     <div class="nav-item">
         <div class="container">
             @*@{ Html.RenderAction("CategoriesMenu", "Categories"); }*@
-
             <nav class="nav-menu mobile-menu">
                 <ul>
-                    <li class="@Html.MenuItemClass("Orders", "Tracking")"><a href="@Url.OrderTrack()">@("PP.Header.Menu.Tracking".Localized())</a></li>
-                    <li><a href="@Url.UserProfile(tab: "")">@("PP.Footer.Account.MyProfile".Localized())</a></li>
-                    <li><a href="@Url.StaticPage("HowToOrder")">@("PP.Header.Information.HowToOrder".Localized())</a></li>
-                    <li><a href="@Url.StaticPage("ContactUs")">@("PP.Footer.Information.ContactUs".Localized())</a></li>
-                    <li><a href="@Url.StaticPage("AboutUs")">@("PP.Footer.Information.AboutUs".Localized())</a></li>
+                    <li class=""><a href="#">Packaging Machinery</a></li>
+                    <li class=""><a href="#">Pallet Wrapping</a></li>
+                    <li class=""><a href="#">eCommerce Packaging</a></li>
+                    <li class=""><a href="#">Shrink Films</a></li>
+                    <li class=""><a href="#">Market Sectors</a></li>
                     <li class=""><a href="@Url.Home()">Online Shop</a></li>
                 </ul>
-
-                @*<li class="@Html.MenuItemClass("Home", "Index")"><a href="@Url.Home()">@("PP.Header.Menu.Home".Localized())</a></li>
-                    <li class="@Html.MenuItemClass("Home", "Search")"><a href="@Url.SearchProducts()">@("PP.Header.Menu.Products".Localized())</a></li>
-                    <li class="@Html.MenuItemClass("Cart", "Cart")"><a href="@Url.Cart()">@("PP.Header.Menu.ShoppingCart".Localized())</a></li>
-                    <li class="@Html.MenuItemClass("Cart", "Checkout")"><a href="@Url.Checkout()">@("PP.Header.Menu.Checkout".Localized())</a></li>*@
-                <!--</ul>
-                </nav>-->
-                @*<div class="mobile-nav-holder">
-                        <div id="mobile-menu-wrap" style="float:@(AppDataHelper.IsRTL ? "left" : "right");"></div>
-                        <div id="categories-menu-wrap" style="float:@(AppDataHelper.IsRTL ? "left" : "right");"></div>
-               </div>*@
             </nav>
         </div>
     </div>
-
 </header>
 
 <div style="display:none">
