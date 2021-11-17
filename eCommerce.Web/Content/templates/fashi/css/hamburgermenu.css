@@ -1,5 +1,8 @@
 ﻿/* Mega Hamburger menu */
 
+@import url("https://use.fontawesome.com/releases/v5.13.0/css/all.css");
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css");
+
 @media only screen and (max-width: 640px) {
     #phone {
         display: none;
@@ -56,13 +59,12 @@ nav {
 /*styling open close button*/
 
 .button {
-    display: block;
+    display: inline;
     position: absolute;
     right: 50px;
     top: 6px;
     z-index: 999;
     font-size: 30px;
-
 }
 
 
@@ -71,7 +73,7 @@ nav {
 }
 
 .btn-open:after {
-    color: #333;
+    color: #273B6B;
     content: "\f0c9";
     font-family: "FontAwesome";
     transition-property: all;
@@ -95,9 +97,10 @@ nav {
 }
 
 .btn-close:hover:after {
-    color: #273B6B;
+    color: #fff;
 }
 /*overlay*/
+
 .overlay {
     display: none;
     position: fixed;
