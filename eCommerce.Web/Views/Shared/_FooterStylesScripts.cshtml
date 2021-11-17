@@ -46,3 +46,16 @@ else
 <a id="changeMode" class="pointerCursor mode-floater" title="@(SessionHelper.DarkMode.Equals("true") ? ("PP.Header.Menu.DisableDarkMode".Localized()) : ("PP.Header.Menu.EnableDarkMode".Localized()))">
     <i class="fas fa-adjust mode-float-icon"></i>
 </a>
+
+<script>
+    $(document).ready(function () {
+        $(".button a").click(function () {
+            $(".overlay").fadeToggle(200);
+            $(this).toggleClass('btn-open').toggleClass('btn-close');
+        });
+    });
+    $('.overlay').on('click', function () {
+        $(".overlay").fadeToggle(200);
+        $(".button a").toggleClass('btn-open').toggleClass('btn-close');
+        open = false;
+    });</script>
