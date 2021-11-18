@@ -70,6 +70,7 @@ namespace eCommerce.Web.Controllers
             model.PageSize = recordSize;
             
             var selectedCategoryIDs = model.SearchedCategories != null ? model.SearchedCategories.Select(x => x.ID).ToList() : null;
+            var selectedCategoryIsLead = model.SearchedCategories != null ? model.SearchedCategories.Select(x => x.IsLead = false).ToList() : null;
 
             model.Products = ProductsService.Instance.SearchProducts(selectedCategoryIDs, model.SearchTerm, model.PriceFrom, model.PriceTo, model.SortBy, pageNo, recordSize.Value, activeOnly: true, out int count, stockCheckCount: null);
 

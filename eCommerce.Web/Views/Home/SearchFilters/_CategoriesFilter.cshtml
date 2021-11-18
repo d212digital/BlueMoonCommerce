@@ -12,7 +12,7 @@
             <li class="@(!Model.CategoryID.HasValue ? "active" : string.Empty)">
                 <a class="@(!Model.CategoryID.HasValue ? "active" : string.Empty)" href="@Url.SearchProducts(category: string.Empty, q: Model.SearchTerm)">
                     @("PP.Search.Categories.AllCategories".LocalizedString())
-                </a>
+                </a> 
             </li>
             @foreach (var categoryWithChildren in categoriesWithChildren)
             {

@@ -269,7 +269,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\BaseViewModels.cs" />
-    <Compile Include="ViewModels\CategoriesIsLeadMenu.cs" />
     <Compile Include="ViewModels\CategoryViewModels.cs" />
     <Compile Include="ViewModels\CommentsViewModels.cs" />
     <Compile Include="ViewModels\HomeViewModels.cs" />
@@ -4952,6 +4951,7 @@
     <Content Include="Views\Shared\_WebHeader.cshtml" />
     <Content Include="Views\Shared\_WebFooter.cshtml" />
     <Content Include="Views\Shared\_WebHeaderStylesScripts.cshtml" />
+    <Content Include="Views\Categories\_CategoriesMenuWeb.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\eCommerce.Data\eCommerce.Data.csproj">
