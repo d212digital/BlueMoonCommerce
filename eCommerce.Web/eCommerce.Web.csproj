@@ -4952,6 +4952,7 @@
     <Content Include="Views\Shared\_WebFooter.cshtml" />
     <Content Include="Views\Shared\_WebHeaderStylesScripts.cshtml" />
     <Content Include="Views\Categories\_CategoriesMenuWeb.cshtml" />
+    <Content Include="Views\Contents\ContactUsWeb.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\eCommerce.Data\eCommerce.Data.csproj">

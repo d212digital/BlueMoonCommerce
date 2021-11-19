@@ -135,6 +135,20 @@ namespace eCommerce.Web
             );
 
             routes.MapRoute(
+                name: "ContactUsWeb",
+                url: "contact-us-web",
+                defaults: new { area = "", controller = "Contents", action = "ContactUsWeb" },
+                namespaces: new[] { "eCommerce.Web.Controllers" }
+            );
+
+            routes.MapRoute(
+                name: "LanguageBased_ContactUsWeb",
+                url: "{lang}/contact-us-web",
+                defaults: new { area = "", controller = "Contents", action = "ContactUsWeb" },
+                namespaces: new[] { "eCommerce.Web.Controllers" }
+            );
+
+            routes.MapRoute(
                 name: "Blog",
                 url: "blog",
                 defaults: new { area = "", controller = "Contents", action = "Blog" },

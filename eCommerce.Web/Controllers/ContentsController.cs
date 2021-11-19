@@ -37,6 +37,19 @@ namespace eCommerce.Web.Controllers
             return View(model);
         }
 
+        public ActionResult ContactUsWeb()
+        {
+            PageViewModel model = new PageViewModel
+            {
+                PageTitle = "Contact Us",
+                PageDescription = string.Format("Contact {0} Team.", ConfigurationsHelper.ApplicationName),
+                PageURL = Url.RouteUrl("ContactUsWeb").ToSiteURL(),
+                PageImageURL = PictureHelper.PageImageURL("contact-us.jpg")
+            };
+
+            return View(model);
+        }
+
         public ActionResult Blog()
         {
             PageViewModel model = new PageViewModel
