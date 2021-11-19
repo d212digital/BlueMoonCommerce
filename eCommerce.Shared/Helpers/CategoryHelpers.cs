@@ -14,7 +14,8 @@ namespace eCommerce.Shared.Helpers
         {
             if (allCategories != null && allCategories.Count > 0)
             {
-                var categoryWithChildren = allCategories.Select(item => new CategoryWithChildren() { Category = item, Children = allCategories.Where(child => child.ParentCategoryID == item.ID).OrderBy(x=>x.SanitizedName).ToList() }).ToList();
+                var categoryWithChildren = allCategories.Select(item => new CategoryWithChildren() 
+                { Category = item, Children = allCategories.Where(child => child.ParentCategoryID == item.ID).OrderBy(x=>x.SanitizedName).ToList() }).ToList();
 
                 return categoryWithChildren.Where(item => !item.Category.ParentCategoryID.HasValue).ToList();
             }

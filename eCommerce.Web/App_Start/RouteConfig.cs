@@ -682,14 +682,14 @@ namespace eCommerce.Web
                 namespaces: new[] { "eCommerce.Web.Controllers" }
             );
 
-            //   Adding the leads section to the frontend of the website
+            //   Adding the sections to the frontend of the website
 
             routes.MapRoute(
                 name: "WebLeads",
                 url: "web",
                 defaults: new { controller = "WebLeads", action = "Index" },
                 namespaces: new[] { "eCommerce.Web.Controllers" }
-            );
+            ); 
 
             routes.MapRoute(
                 name: "LanguageBased_WebLeads",

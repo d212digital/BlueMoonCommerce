@@ -85,7 +85,7 @@ namespace eCommerce.Shared.Helpers
             routeURL = HttpUtility.UrlDecode(routeURL, System.Text.Encoding.UTF8);
             return routeURL.ToLower();
         }
-
+        
         public static string Register(this UrlHelper helper)
         {
             string routeURL = string.Empty;
