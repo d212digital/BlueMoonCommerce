@@ -31,6 +31,7 @@ namespace eCommerce.Web.ViewModels
         public List<string> Sizes { get; set; }
         public decimal? PriceFrom { get; set; }
         public decimal? PriceTo { get; set; }
+        
     }
 
     public class FeaturedProductsViewModel : PageViewModel

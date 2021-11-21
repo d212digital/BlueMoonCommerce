@@ -2,7 +2,7 @@
 @using eCommerce.Shared
 @model eCommerce.Web.ViewModels.ProductsViewModel
 
-@if (Model != null && Model.Categories != null && Model.Categories.Count > 0)
+@if (Model != null && Model.Categories != null && Model.Categories.Count > 0)   
 {
     var categoriesWithChildren = CategoryHelpers.MakeCategoriesHierarchy(Model.Categories);
 
