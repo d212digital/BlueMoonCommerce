@@ -43,6 +43,7 @@ body {
 	font-family: "Karla", sans-serif;
 	-webkit-font-smoothing: antialiased;
 	font-smoothing: antialiased;
+	overflow-x: hidden;
 }
 
 h1,
@@ -105,8 +106,9 @@ a:hover,
 a:focus {
 	text-decoration: none;
 	outline: none;
-	color: #fff;
+	color: #273B6B;
 }
+
 
 ul,
 ol {

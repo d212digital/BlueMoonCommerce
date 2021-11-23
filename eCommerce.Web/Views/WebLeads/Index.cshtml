@@ -32,84 +32,12 @@
     </div>
 </div>
 <!---Start top row for categories -->
-<div class="container mb-4">
-    <div class="row col-lg-12">
-        <div class="card-header card w-100 mr-1 mb-3">
-            <h3 class="text-center"> Shrink Wrapping &amp; Packaging Machinery</h3>
-        </div>
-        <div class="card-columns">
-            <div class="card p-3" style="width: 20rem;">
-                <img class="card-img-top" src="~/Content/images/site/pm.png" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Packaging Machinery</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Cras justo odio</li>
-                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                    <li class="list-group-item">Vestibulum at eros</li>
-                </ul>
-                <div class="card-body">
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
-                </div>
-            </div>
-            <div class="card p-3 ml-3" style="width: 20rem;">
-                <img class="card-img-top" src="~/Content/images/site/pw.png" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Pallet Wrapping</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Cras justo odio</li>
-                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                    <li class="list-group-item">Vestibulum at eros</li>
-                </ul>
-                <div class="card-body">
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
-                </div>
-            </div>
-            <div class="card p-3 ml-3" style="width: 20rem;">
-                <img class="card-img-top" src="~/Content/images/site/hst.png" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Shrink Tunnels</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Cras justo odio</li>
-                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                    <li class="list-group-item">Vestibulum at eros</li>
-                </ul>
-                <div class="card-body">
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
-                </div>
-            </div>
-            <div class="card p-3 ml-3" style="width: 20rem;">
-                <img class="card-img-top" src="~/Content/images/site/sm.png" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Strapping Machines</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Cras justo odio</li>
-                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                    <li class="list-group-item">Vestibulum at eros</li>
-                </ul>
-                <div class="card-body">
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+@{ Html.RenderAction("CategoriesHomeIsLead", "Categories"); }
 
-<!---Start second row for categories -->
+<!---Start second row  -->
 <div class="container mb-4">
     <div class="row col-lg-12">
-        <div class="card-columns">
+        <div class="card-columns p-3" style="display:block">
             <div class="card p-3" style="width: 20rem;">
                 <img class="card-img-top" src="~/Content/images/site/default-picture.png" alt="Card image cap">
                 <div class="card-body">
@@ -118,7 +46,7 @@
                     <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
-            <div class="card p-3 ml-3" style="width: 20rem;">
+            <div class="card p-3" style="width: 20rem;">
                 <img class="card-img-top" src="~/Content/images/site/default-picture.png" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
@@ -126,7 +54,7 @@
                     <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
-            <div class="card p-3 ml-3" style="width: 20rem;">
+            <div class="card p-3" style="width: 20rem;">
                 <img class="card-img-top" src="~/Content/images/site/default-picture.png" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
@@ -134,7 +62,7 @@
                     <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
-            <div class="card p-3 ml-3" style="width: 20rem;">
+            <div class="card p-3" style="width: 20rem;">
                 <img class="card-img-top" src="~/Content/images/site/default-picture.png" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
@@ -146,20 +74,7 @@
     </div>
 </div>
 
-<!-- Start container for contact card -->
-<div class="card text-center mb-4">
-    <div class="card-header">
-        <h3> For Shrink Wrapping Enquiries</h3>
-    </div>
-    <div class="card-body">
-        <h5 class="card-title">Get in touch today for</h5>
-        <p class="card-text">Support, Machine enquires, film purchasing.</p>
-        <a href="#" class="btn btn-primary w-20">Click to visit our contacts page or submit an online enquiry</a>
-    </div>
-    @*<div class="card-footer text-muted">
-        Support Centre | Knowledge Base | Raise a Support ticket | Machine breakdowns | Servicing | Arrange a demo
-    </div>*@
-</div>
+
 
 
 

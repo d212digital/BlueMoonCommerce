@@ -23,6 +23,7 @@ namespace eCommerce.Entities
 
         public virtual List<Product> Products { get; set; }
         public virtual List<CategoryRecord> CategoryRecords { get; set; }
+       
     }
 
     public class CategoryRecord : BaseEntity

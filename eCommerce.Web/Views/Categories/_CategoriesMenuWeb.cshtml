@@ -7,7 +7,7 @@
             
             <nav class="nav-menu mobile-menu">
                 <ul>
-                    @foreach (var categoryWithChildren in Model.CategoryWithChildrens)
+                    @foreach (var categoryWithChildren in Model.CategoryWithChildrens.Take(5))
                     {
                         var category = categoryWithChildren.Category;
 
