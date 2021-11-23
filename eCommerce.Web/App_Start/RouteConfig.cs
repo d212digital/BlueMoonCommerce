@@ -230,7 +230,7 @@ namespace eCommerce.Web
                 url: "{lang}/search/{category}",
                 defaults: new { area = "", controller = "Home", action = "Search", category = UrlParameter.Optional },
                 namespaces: new[] { "eCommerce.Web.Controllers" }
-            );
+            );            
 
             routes.MapRoute(
                 name: "ProductDetails",

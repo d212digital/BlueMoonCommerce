@@ -41,7 +41,7 @@ namespace eCommerce.Web.Controllers
 
         public ActionResult Search(string category, string q, decimal? from, decimal? to, string sortby, int? pageNo, int? recordSize)
         {
-            recordSize = recordSize ?? (int)RecordSizeEnums.Size20;
+            recordSize = recordSize ?? (int)RecordSizeEnums.Size10;
 
             ProductsViewModel model = new ProductsViewModel
             {

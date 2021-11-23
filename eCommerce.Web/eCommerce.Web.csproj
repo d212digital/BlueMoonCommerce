@@ -4954,6 +4954,7 @@
     <Content Include="Views\Categories\_CategoriesMenuWeb.cshtml" />
     <Content Include="Views\Contents\ContactUsWeb.cshtml" />
     <Content Include="Views\Categories\_CategoriesHomeWeb.cshtml" />
+    <Content Include="Views\WebLeads\_SearchWeb.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\eCommerce.Data\eCommerce.Data.csproj">
