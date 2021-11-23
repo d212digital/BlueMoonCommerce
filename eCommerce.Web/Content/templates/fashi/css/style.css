@@ -43,6 +43,10 @@ body {
 	font-family: "Karla", sans-serif;
 	-webkit-font-smoothing: antialiased;
 	font-smoothing: antialiased;
+	
+}
+
+.wrapper {
 	overflow-x: hidden;
 }
 
