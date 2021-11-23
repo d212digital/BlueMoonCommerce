@@ -2,7 +2,8 @@
 @using eCommerce.Shared
 @model eCommerce.Web.ViewModels.ProductsViewModel
 
-@if (Model != null && Model.Categories != null && Model.Categories.Count > 0)   
+@if (Model != null && Model.Categories != null && Model.Categories.Count > 0) 
+
 {
     var categoriesWithChildren = CategoryHelpers.MakeCategoriesHierarchy(Model.Categories);
 
@@ -19,6 +20,10 @@
                 var category = categoryWithChildren.Category;
 
                 var currentLanguageCategoryRecord = category.CategoryRecords.FirstOrDefault(x => x.LanguageID == AppDataHelper.CurrentLanguage.ID);
+
+                if (category.IsLead == false)
+                {
+
 
                 <li class="@(category.ID == Model.CategoryID ? "active" : string.Empty)">
                     <div>
@@ -55,6 +60,7 @@
                         }
                     </div>
                 </li>
+                }
             }
         </ul>
     </div>
