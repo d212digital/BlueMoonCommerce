@@ -1,196 +1,116 @@
-﻿
-<!-- Start container for contact card -->
-<div class="card text-center mb-4 card w-100">
-    <div class="card-header">
-        <h3> For Shrink Wrapping Enquiries</h3>
-    </div>
-    <div class="card-body">
-        <h5 class="card-title">Get in touch today for</h5>
-        <p class="card-text">Support, Machine enquires, film purchasing.</p>
-        <a href="#" class="btn btn-primary w-20">Click to visit our contacts page or submit an online enquiry</a>
-    </div>
- </div>
-
-
-    <div class="card-header card w-100 text-center">
-        <h3> Trusted By Our Valued Customers</h3>
-    </div>
-
-@if (true)
-{
-    <div class="partner-logo" title="@("PP.Home.Showcase.OurPartners".LocalizedString())">
+﻿<!-- Start Footer Area -->
+<footer class="footer-area footer-eleven">
+    <!-- Start Footer Top -->
+    <div class="footer-top">
         <div class="container">
-            <div class="logo-carousel owl-carousel ml-3">
-                <div class="logo-item">
-                    <div class="tablecell-inner">
-                        <img src="~/Content/templates/fashi/img/logo-carousel/costco.png" alt="">
+            <div class="inner-content">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <!-- Single Widget -->
+                        <div class="footer-widget f-about">
+                            <div class="logo">
+                                <a href="index.html">
+                                    <img src="~/Content/templates/sws-frontend/assets/images/logo2.png" alt="#" class="img-fluid" />
+                                </a>
+                            </div>
+                            <p>
+                                Making the world a better place through constructing elegant
+                                hierarchies.
+                            </p>
+                            <p class="copyright-text">
+                                <span>© 2022 Shrink Wrapping Supplies.</span>Designed and Developed by
+                                <a href="javascript:void(0)" rel="nofollow"> BlueMoon Software </a>
+                            </p>
+                        </div>
+                        <!-- End Single Widget -->
                     </div>
-                </div>
-                <div class="logo-item">
-                    <div class="tablecell-inner">
-                        <img src="~/Content/templates/fashi/img/logo-carousel/amazon.png" alt="">
+                    <div class="col-lg-2 col-md-6 col-12">
+                        <!-- Single Widget -->
+                        <div class="footer-widget f-link">
+                            <h5>Solutions</h5>
+                            <ul>
+                                <li><a href="javascript:void(0)">Marketing</a></li>
+                                <li><a href="javascript:void(0)">Analytics</a></li>
+                                <li><a href="javascript:void(0)">Commerce</a></li>
+                                <li><a href="javascript:void(0)">Insights</a></li>
+                            </ul>
+                        </div>
+                        <!-- End Single Widget -->
                     </div>
-                </div>
-                <div class="logo-item">
-                    <div class="tablecell-inner">
-                        <img src="~/Content/templates/fashi/img/logo-carousel/baxters.png" alt="">
+                    <div class="col-lg-2 col-md-6 col-12">
+                        <!-- Single Widget -->
+                        <div class="footer-widget f-link">
+                            <h5>Support</h5>
+                            <ul>
+                                <li><a href="javascript:void(0)">Pricing</a></li>
+                                <li><a href="javascript:void(0)">Documentation</a></li>
+                                <li><a href="javascript:void(0)">Guides</a></li>
+                                <li><a href="javascript:void(0)">API Status</a></li>
+                            </ul>
+                        </div>
+                        <!-- End Single Widget -->
                     </div>
-                </div>
-                <div class="logo-item">
-                    <div class="tablecell-inner">
-                        <img src="~/Content/templates/fashi/img/logo-carousel/kerry-foods.png" alt="">
-                    </div>
-                </div>
-                <div class="logo-item">
-                    <div class="tablecell-inner">
-                        <img src="~/Content/templates/fashi/img/logo-carousel/enviro-agency.png" alt="">
-                    </div>
-                </div>
-                <div class="logo-item">
-                    <div class="tablecell-inner">
-                        <img src="~/Content/templates/fashi/img/logo-carousel/assurant.png" alt="">
-                    </div>
-                </div>
-                <div class="logo-item">
-                    <div class="tablecell-inner">
-                        <img src="~/Content/templates/fashi/img/logo-carousel/saftey-kleen.png" alt="">
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <!-- Single Widget -->
+                        <div class="footer-widget newsletter">
+                            <h5>Subscribe</h5>
+                            <p>Subscribe to our newsletter for the latest updates</p>
+                            <form action="#" method="get" target="_blank" class="newsletter-form">
+                                <input name="EMAIL" placeholder="Email address" required="required" type="email" />
+                                <div class="button">
+                                    <button class="sub-btn">
+                                        <i class="lni lni-envelope"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- End Single Widget -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    @*<section class="latest-blog spad py-0">
-            <div class="benefit-items">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-3">
-                            <div class="single-benefit">
-                                <div class="sb-icon">
-                                    <i class="fas fa-shipping-fast"></i>
-                                </div>
-                                <div class="sb-text">
-                                    <h6>@("PP.Home.Showcase.FastDelivery".LocalizedString())</h6>
-                                    <p>@("PP.Home.Showcase.OnTimeDelivery".LocalizedString())</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="single-benefit">
-                                <div class="sb-icon">
-                                    <i class="fas fa-headset"></i>
-                                </div>
-                                <div class="sb-text">
-                                    <h6>@("PP.Home.Showcase.247Support".LocalizedString())</h6>
-                                    <p>@("PP.Home.Showcase.AlwaysReadyToHelp".LocalizedString())</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="single-benefit border-0">
-                                <div class="sb-icon">
-                                    <i class="fas fa-user-shield"></i>
-                                </div>
-                                <div class="sb-text">
-                                    <h6>@("PP.Home.Showcase.SecurePayments".LocalizedString())</h6>
-                                    <p>@("PP.Home.Showcase.SecurePaymentOptions".LocalizedString())</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="single-benefit border-0">
-                                <div class="sb-icon">
-                                    <i class="fas fa-toolbox"></i>
-                                </div>
-                                <div class="sb-text">
-                                    <h6>@("PP.Home.Showcase.Servicing".LocalizedString())</h6>
-                                    <p>@("PP.Home.Showcase.MachineServicing".LocalizedString())</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>*@
-}
-<footer class="footer-section pp-widgets">
-    <div class="container col-12">
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="footer-left">
-                    @* TODO: We should be able to localize the application name along with Logo and Address *@
-                    <div class="footer-logo">
-                        <a href="@Url.Home()">
-                            <img src="~/Content/images/site/logo-big.png" />
-                            @*<h5>
-                                    @ConfigurationsHelper.ApplicationName
-                                </h5>*@
-                        </a>
-                    </div>
-                    <p>
-                        @ConfigurationsHelper.ApplicationIntro
-                        <br />
-                        <address class="small text-muted">
-                            @Html.Raw(string.Format("{0}<br/>{1}", ConfigurationsHelper.AddressLine1, ConfigurationsHelper.AddressLine2))
-                        </address>
-                    </p>
-                </div>
-            </div>
-            <div class="col-lg-2">
-                <div class="footer-widget">
-                    <h5>@("PP.Footer.Information".Localized())</h5>
-                    <ul>
-                        <li><a href="@Url.StaticPage("AboutUs")">@("PP.Footer.Information.AboutUs".Localized())</a></li>
-                        <li><a href="@Url.StaticPage("ContactUs")">@("PP.Footer.Information.ContactUs".Localized())</a></li>
-                        <li><a href="@Url.StaticPage("PrivacyPolicy")">@("PP.Footer.Information.PrivacyPolicy".Localized())</a></li>
-                        <li><a href="@Url.StaticPage("RefundPolicy")">@("PP.Footer.Information.RefundPolicy".Localized())</a></li>
-                        <li><a href="@Url.StaticPage("TermsConditions")">@("PP.Footer.Information.TermsAndConditions".Localized())</a></li>
-
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-2">
-                <div class="footer-widget">
-                    <h5>@("PP.Footer.Account".Localized())</h5>
-                    <ul>
-                        <li><a href="@Url.UserProfile(tab: "")">@("PP.Footer.Account.MyProfile".Localized())</a></li>
-                        <li><a href="@Url.UserProfile(tab: "orders")">@("PP.Footer.Account.MyOrders".Localized())</a></li>
-                        <li><a href="@Url.OrderTrack()">@("PP.Footer.Account.TrackOrder".Localized())</a></li>
-                        <li><a href="@Url.Cart()">@("PP.Footer.Account.MyCart".Localized())</a></li>
-                        <li><a href="@Url.Checkout()">@("PP.Footer.Account.Checkout".Localized())</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                @Html.Partial("_NewsLetterWidget")
-            </div>
-        </div>
-    </div>
-    <div class="copyright-reserved" style="display:block">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 copyrights-widget">
-                    <div class="copyright-text">
-                        <i title="Copyrights" class="fas fa-copyright dont-transform text-warning"></i>
-                        @Html.Raw("PP.Footer.CopyrightsMessage".LocalizedString().Replace("{application}", "<a href='" + Url.Home() + "'>" + ConfigurationsHelper.ApplicationName + "</a>").Replace("{date}", DateTime.Now.Year.ToString()))
-                        <br />
-                    </div>
-                    <div class="payment-pic text-white">
-                        <img src="~/Content/images/site/ecommerce-payment-methods.png" />
-                    </div>
-                </div>
-                <div class='col-lg-12 py-2 ft-widget' style="display:block">
-                    <small class='text-muted' dir='ltr'>
-                        <span>
-                            <i class='fas fa-laptop-code text-success' title='Software'></i> Powered by <a href='https://www.bluemoonesoftware.io/' target='_blank'>BlueMoon eCommerce</a>.
-                        </span>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        <span>
-                            Template Designed by <a class='text-primary' href='https://colorlib.com' target='_blank' rel='nofollow'>Colorlib</a>.
-                        </span>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    </small>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!--/ End Footer Top -->
 </footer>
+<!--/ End Footer Area -->
+
+
+
+<a href="#" class="scroll-top btn-hover">
+    <i class="lni lni-chevron-up"></i>
+</a>
+
+
+<script>
+
+    //===== close navbar-collapse when a  clicked
+    let navbarTogglerNine = document.querySelector(
+        ".navbar-nine .navbar-toggler"
+    );
+    navbarTogglerNine.addEventListener("click", function () {
+        navbarTogglerNine.classList.toggle("active");
+    });
+
+    // ==== left sidebar toggle
+    let sidebarLeft = document.querySelector(".sidebar-left");
+    let overlayLeft = document.querySelector(".overlay-left");
+    let sidebarClose = document.querySelector(".sidebar-close .close");
+
+    overlayLeft.addEventListener("click", function () {
+        sidebarLeft.classList.toggle("open");
+        overlayLeft.classList.toggle("open");
+    });
+    sidebarClose.addEventListener("click", function () {
+        sidebarLeft.classList.remove("open");
+        overlayLeft.classList.remove("open");
+    });
+
+    // ===== navbar nine sideMenu
+    let sideMenuLeftNine = document.querySelector(".navbar-nine .menu-bar");
+
+    sideMenuLeftNine.addEventListener("click", function () {
+        sidebarLeft.classList.add("open");
+        overlayLeft.classList.add("open");
+    });
+
+</script>

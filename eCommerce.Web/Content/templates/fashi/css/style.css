@@ -739,7 +739,7 @@ ol {
 		.header-section .nav-item .nav-depart .depart-btn {
 			background: #273B6B;
 			color: #ffffff;
-			padding: 14px 84px 14px 18px;
+			padding: 14px 84px 14px 10px;
 			cursor: pointer;
 			position: relative;
 		}
@@ -793,7 +793,7 @@ ol {
 		font-size: 14px;
 		font-weight: 700;
 		text-transform: uppercase;
-		margin-left: 16px;
+		margin-left: 10px;
 	}
 
 	.header-section .nav-item .nav-depart .depart-btn .depart-hover {
@@ -824,7 +824,7 @@ ol {
 				display: block;
 				font-size: 16px;
 				color: #000000;
-				padding-left: 40px;
+				padding-left: 10px;
 				padding-top: 16px;
 				padding-right: 30px;
 				-webkit-transition: all 0.3s;
@@ -3211,7 +3211,7 @@ ol {
 
 .checkout-form .place-order .order-total {
 	border: 2px solid #ebebeb;
-	padding-left: 40px;
+	padding-left: 10px;
 	padding-right: 40px;
 	padding-top: 22px;
 	padding-bottom: 35px;

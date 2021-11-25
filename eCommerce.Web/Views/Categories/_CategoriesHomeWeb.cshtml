@@ -4,47 +4,47 @@
 @if (Model != null && Model.CategoryWithChildrens != null && Model.CategoryWithChildrens.Count > 0)
 {
 
-    <div class="container mb-4">
+    <div class="container">
         <div class="row col-lg-12">
-            <div class="card-header card w-100 mr-1 mb-3">
-                <h3 class="text-center"> Shrink Wrapping &amp; Packaging Machinery</h3>
-            </div>
-            @foreach (var categoryWithChildren in Model.CategoryWithChildrens)
-            {
-                var category = categoryWithChildren.Category;
+            <div class="row">
+                @foreach (var categoryWithChildren in Model.CategoryWithChildrens)
+                {
+                    var category = categoryWithChildren.Category;
 
-                var currentLanguageCategoryRecord = category.CategoryRecords.FirstOrDefault(x => x.LanguageID == AppDataHelper.CurrentLanguage.ID);                         
+                    var currentLanguageCategoryRecord = category.CategoryRecords.FirstOrDefault(x => x.LanguageID == AppDataHelper.CurrentLanguage.ID);
 
-                <div class="card-columns p-3" style="display:grid">
-                    <div class="card p-3" style="width: 20rem;">
-                        <a href="@Url.SearchProducts(category.SanitizedName)">
-                            <div class="single-banner d-flex align-items-center">
-                                @Html.Picture(picture: category.Picture, defaultPic: "site/default-bg.jpg", alt: currentLanguageCategoryRecord != null ? currentLanguageCategoryRecord.Name : string.Empty)
-                            </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-services">
+                            @*<div class="service-icon">
+                                <i class="lni lni-eye"></i>
+                            </div>*@
+                            <a href="@Url.SearchWebProducts(category.SanitizedName)">
+                                <div class="single-banner d-flex align-items-center">
+                                    @Html.Picture(picture: category.Picture, defaultPic: "site/default-bg.jpg", alt: currentLanguageCategoryRecord != null ? currentLanguageCategoryRecord.Name : string.Empty)
+                                </div>
                             </a>
                             <div class="card-body">
                                 <h5 class="card-title">
-                                    <a href="@Url.SearchProducts(category.SanitizedName)">
+                                    <a href="@Url.SearchWebProducts(category.SanitizedName)">
                                         @(currentLanguageCategoryRecord != null ? currentLanguageCategoryRecord.Name : string.Empty)
                                     </a>
                                 </h5>
-                                <p class="card-text">
-                                    Some quick example text to build on the card title and make up the bulk of the card's content.
-                                </p>
+                                <div class="service-content">
+                                    <h4>Refreshing Design</h4>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, adipscing elitr, sed diam nonumy
+                                        eirmod tempor ividunt labor dolore magna.
+                                    </p>
+                                </div>
                             </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Cras justo odio</li>
-                                <li class="list-group-item">Dapibus ac facilisis in</li>
-                                <li class="list-group-item">Vestibulum at eros</li>
-                            </ul>
-                            <div class="card-body">
-                                <a href="#" class="card-link">Card link</a>
-                                <a href="#" class="card-link">Another link</a>
-                            </div>
-</div>
-                </div>
-            }
+                        </div>
 
+
+                    </div>
+
+                }
+            </div>
         </div>
     </div>
+
 }

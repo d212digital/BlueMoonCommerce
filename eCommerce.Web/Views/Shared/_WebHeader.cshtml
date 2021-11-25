@@ -1,239 +1,261 @@
 ﻿@using Microsoft.AspNet.Identity
 
-<header class="header-section">
-    <div class="header-top">
-        <div class="container">
-            <div id="phone" class="text-center mt-3 mb-3">
-                @*@if (!string.IsNullOrEmpty(ConfigurationsHelper.Email))
-                    {
-                        <div class="mail-service">
-                            <i class="fas fa-envelope"></i>
-                            <a class="text-dark" href="mailto:sales@shrinkwrappingsupplies.co.uk" target="_blank">
-                                @ConfigurationsHelper.Email
-                            </a>
-                        </div>
-                    }*@
-                @if (!string.IsNullOrEmpty(ConfigurationsHelper.PhoneNumber))
-                {
-                    <div class="phone-service">
-                        <i class="fas fa-phone mr-1"></i>
-                        <a class="text-dark" href="tell:01613665552" target="_blank">
-                            <span>0161-366-5552 - Shrink Wrapping Supplies Ltd - Packaging Systems & Film Suppliers Since 1985</span>
-                        </a>
-                    </div>
-                }
-            </div>
-            @*@if (AppDataHelper.IsMobile && !string.IsNullOrEmpty(ConfigurationsHelper.PhoneNumber))
-            {
-                <div class="d-sm-block d-md-none" style="display:inline-block; margin-top: 6px">
-                    <div class="phone-service">
-                        <i class="fas fa-phone" style="line-height: inherit"></i>
-                        <a class="text-dark" href="tell:@ConfigurationsHelper.PhoneNumber" target="_blank">
-                            @ConfigurationsHelper.PhoneNumber.SafeSubstring(8)
-                        </a>
-                    </div>
-                </div>
-            }*@
-
-        </div>
-    </div>
+<section class="navbar-area navbar-nine">
     <div class="container">
-        <div class="inner-header">
-            <div class="row">
-                <div class="col-lg-3 col-md-3">
-                    <div class="logo">
-                        <a href="/web">
-                            <img src="~/Content/images/site/logo2.png" />
-                        </a>
-                    </div>
-                </div>           
-                @*<div class="col-lg-6 col-md-6">
-                        <form class="advanced-search" action="@Url.SearchProducts()">
-                            <div class="input-group">
-                                <input type="text" name="q" placeholder="@("PP.Header.SearchPlaceholder".Localized())" value="@(ViewBag.SearchTerm)" required>
-                                <button type="submit">
-                                    <i class="fas fa-search"></i>
-                                </button>
-                            </div>
-                        </form>
-                    </div>*@
-                @*<div id="cart-info" class="col-lg-3 col-md-3 float-right">
-                        <ul class="nav-right">
-                            <li class="cart-icon cartMenu">
-                                <span class="pointerCursor">
-                                    <a>
-                                        <i class="fas fa-shopping-cart"></i>
-                                        <span class="countholder">0</span>
-                                    </a>
-                                    <span class="cart-price ltr-dir" dir="ltr"></span>
-                                </span>
-                                <div class="cart-hover">
-                                    <div class="cart-items-modal"></div>
-                                    <div class="d-flex justify-content-center">
-                                        <div class="spinner-border my-5 bloader" role="status" style="display:none">
-                                        </div>
-                                    </div>
-                                </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <nav class="navbar navbar-expand-lg">
+                    <a class="navbar-brand" href="/web">
+                        <img src="~/Content/templates/sws-frontend/assets/images/w-logo1.png" alt="Logo" />
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNine"
+                            aria-controls="navbarNine" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="toggler-icon"></span>
+                        <span class="toggler-icon"></span>
+                        <span class="toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse sub-menu-bar" id="navbarNine">
+                        <ul class="navbar-nav me-auto">
+                            <li class="nav-item">
+                                <a class="page-scroll active" href="#hero-area">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="page-scroll" href="#machinecats">Packaging Machinery</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="page-scroll" href="#services">Our Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="page-scroll" href="#pricing">Machine Servicing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="page-scroll" href="/en">Online Shop</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="page-scroll" href="#contact">Contact</a>
                             </li>
                         </ul>
-                    </div>*@
+                    </div>
+
+                    <div class="navbar-btn d-none d-lg-inline-block">
+                        <a class="menu-bar" href="#side-menu-left"><i class="lni lni-menu"></i></a>
+                    </div>
+                </nav>
+                <!-- navbar -->
             </div>
         </div>
+        <!-- row -->
     </div>
+    <!-- container -->
+</section>
 
-    <!-- Start new hamburger menu -->
+<!--====== NAVBAR NINE PART ENDS ======-->
+<!--====== SIDEBAR PART START ======-->
 
-    <div class="button">
-        <a class="btn-open" href="#"></a>
+<div class="sidebar-left">
+    <div class="sidebar-close">
+        <a class="close" href="#close"><i class="lni lni-close"></i></a>
     </div>
-    <div class="overlay">
-        <div class="wrap">
-            <ul class="wrap-nav">
-                <li>
-                    <a href="#">About</a>
-                    <ul>
-                        <li class=""><a href="#">Packaging Machinery</a></li>
-                        <li class=""><a href="#">Pallet Wrapping</a></li>
-                        <li class=""><a href="#">Shrink Tunnels</a></li>
-                        <li class=""><a href="#">Strapping</a></li>
-                        <li class=""><a href="#">Shrink Films</a></li>
-                        <li class=""><a href="#">Market Sectors</a></li>
-                        <li class=""><a href="@Url.Home()">Online Shop</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Services</a>
-                    <ul>
-                        <li class=""><a href="#">Packaging Machinery</a></li>
-                        <li class=""><a href="#">Pallet Wrapping</a></li>
-                        <li class=""><a href="#">Shrink Tunnels</a></li>
-                        <li class=""><a href="#">Strapping</a></li>
-                        <li class=""><a href="#">Shrink Films</a></li>
-                        <li class=""><a href="#">Market Sectors</a></li>
-                        <li class=""><a href="@Url.Home()">Online Shop</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Work</a>
-                    <ul>
-                        <li class=""><a href="#">Packaging Machinery</a></li>
-                        <li class=""><a href="#">Pallet Wrapping</a></li>
-                        <li class=""><a href="#">Shrink Tunnels</a></li>
-                        <li class=""><a href="#">Strapping</a></li>
-                        <li class=""><a href="#">Shrink Films</a></li>
-                        <li class=""><a href="#">Market Sectors</a></li>
-                        <li class=""><a href="@Url.Home()">Online Shop</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">About</a>
-                    <ul>
-                        <li class=""><a href="#">Packaging Machinery</a></li>
-                        <li class=""><a href="#">Pallet Wrapping</a></li>
-                        <li class=""><a href="#">Shrink Tunnels</a></li>
-                        <li class=""><a href="#">Strapping</a></li>
-                        <li class=""><a href="#">Shrink Films</a></li>
-                        <li class=""><a href="#">Market Sectors</a></li>
-                        <li class=""><a href="@Url.Home()">Online Shop</a></li>
-                    </ul>
-                </li>               
-            </ul>
-            <ul class="wrap-nav">
-                <li>
-                    <a href="#">About</a>
-                    <ul>
-                        <li class=""><a href="#">Packaging Machinery</a></li>
-                        <li class=""><a href="#">Pallet Wrapping</a></li>
-                        <li class=""><a href="#">Shrink Tunnels</a></li>
-                        <li class=""><a href="#">Strapping</a></li>
-                        <li class=""><a href="#">Shrink Films</a></li>
-                        <li class=""><a href="#">Market Sectors</a></li>
-                        <li class=""><a href="@Url.Home()">Online Shop</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Services</a>
-                    <ul>
-                        <li class=""><a href="#">Packaging Machinery</a></li>
-                        <li class=""><a href="#">Pallet Wrapping</a></li>
-                        <li class=""><a href="#">Shrink Tunnels</a></li>
-                        <li class=""><a href="#">Strapping</a></li>
-                        <li class=""><a href="#">Shrink Films</a></li>
-                        <li class=""><a href="#">Market Sectors</a></li>
-                        <li class=""><a href="@Url.Home()">Online Shop</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Work</a>
-                    <ul>
-                        <li class=""><a href="#">Packaging Machinery</a></li>
-                        <li class=""><a href="#">Pallet Wrapping</a></li>
-                        <li class=""><a href="#">Shrink Tunnels</a></li>
-                        <li class=""><a href="#">Strapping</a></li>
-                        <li class=""><a href="#">Shrink Films</a></li>
-                        <li class=""><a href="#">Market Sectors</a></li>
-                        <li class=""><a href="@Url.Home()">Online Shop</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Work</a>
-                    <ul>
-                        <li class=""><a href="#">Packaging Machinery</a></li>
-                        <li class=""><a href="#">Pallet Wrapping</a></li>
-                        <li class=""><a href="#">Shrink Tunnels</a></li>
-                        <li class=""><a href="#">Strapping</a></li>
-                        <li class=""><a href="#">Shrink Films</a></li>
-                        <li class=""><a href="#">Market Sectors</a></li>
-                        <li class=""><a href="@Url.Home()">Online Shop</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <div class="social">
-                <a href="#">
-                    <div class="social-icon">
-                        <i class="fa fa-facebook"></i>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="social-icon">
-                        <i class="fa fa-twitter"></i>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="social-icon">
-                        <i class="fa fa-codepen"></i>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="social-icon">
-                        <i class="fa fa-behance"></i>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="social-icon">
-                        <i class="fa fa-dribbble"></i>
-                    </div>
-                </a>
-            </div>
+    <div class="sidebar-content">
+        <div class="sidebar-logo">
+            <a href="index.html"><img src="~/Content/templates/sws-frontend/assets/images/logo2.png" alt="Logo" /></a>
         </div>
+        <p class="text">
+            We are dedicated to providing a high
+            quality service at a competitive price.
+            Total reliability since 1985.
+        </p>
+        <!-- logo -->
+        <div class="sidebar-menu">
+            <h5 class="menu-title">Quick Links</h5>
+            <ul>
+                <li><a href="javascript:void(0)">About Us</a></li>
+                <li><a href="javascript:void(0)">Our Machinery</a></li>
+                <li><a href="javascript:void(0)">Latest News</a></li>
+                <li><a href="javascript:void(0)">Contact Us</a></li>
+            </ul>
+        </div>
+        <!-- menu -->
+        <div class="sidebar-social align-items-center justify-content-center">
+            <h5 class="social-title">Follow Us On</h5>
+            <ul>
+                <li>
+                    <a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)"><i class="lni lni-linkedin-original"></i></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)"><i class="lni lni-youtube"></i></a>
+                </li>
+            </ul>
+        </div>
+        <!-- sidebar social -->
     </div>
+    <!-- content -->
+</div>
+<div class="overlay-left"></div>
 
-    <div class="nav-item">
-        <div class="container">
-            @{ Html.RenderAction("CategoriesMenuIsLead", "Categories"); }
-            
-            <!--<nav class="nav-menu mobile-menu">
-                <ul>-->
-                    @*<li class=""><a href="#">Packaging Machinery</a></li>
+<!--====== SIDEBAR PART ENDS ======-->
+
+
+
+<!-- Start new hamburger menu -->
+<!--<div class="button">
+    <a class="btn-open" href="#"></a>
+</div>
+<div class="overlay">
+    <div class="wrap">
+        <ul class="wrap-nav">
+            <li>
+                <a href="#">About</a>
+                <ul>
+                    <li class=""><a href="#">Packaging Machinery</a></li>
                     <li class=""><a href="#">Pallet Wrapping</a></li>
                     <li class=""><a href="#">Shrink Tunnels</a></li>
                     <li class=""><a href="#">Strapping</a></li>
-                    <li class=""><a href="#">Shrink Films</a></li>*@
-                    <!--<li class=""><a href="@Url.StaticPage("ContactUsWeb")">Contact us</a></li>
+                    <li class=""><a href="#">Shrink Films</a></li>
+                    <li class=""><a href="#">Market Sectors</a></li>
                     <li class=""><a href="@Url.Home()">Online Shop</a></li>
                 </ul>
-            </nav>-->
+            </li>
+            <li>
+                <a href="#">Services</a>
+                <ul>
+                    <li class=""><a href="#">Packaging Machinery</a></li>
+                    <li class=""><a href="#">Pallet Wrapping</a></li>
+                    <li class=""><a href="#">Shrink Tunnels</a></li>
+                    <li class=""><a href="#">Strapping</a></li>
+                    <li class=""><a href="#">Shrink Films</a></li>
+                    <li class=""><a href="#">Market Sectors</a></li>
+                    <li class=""><a href="@Url.Home()">Online Shop</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Work</a>
+                <ul>
+                    <li class=""><a href="#">Packaging Machinery</a></li>
+                    <li class=""><a href="#">Pallet Wrapping</a></li>
+                    <li class=""><a href="#">Shrink Tunnels</a></li>
+                    <li class=""><a href="#">Strapping</a></li>
+                    <li class=""><a href="#">Shrink Films</a></li>
+                    <li class=""><a href="#">Market Sectors</a></li>
+                    <li class=""><a href="@Url.Home()">Online Shop</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">About</a>
+                <ul>
+                    <li class=""><a href="#">Packaging Machinery</a></li>
+                    <li class=""><a href="#">Pallet Wrapping</a></li>
+                    <li class=""><a href="#">Shrink Tunnels</a></li>
+                    <li class=""><a href="#">Strapping</a></li>
+                    <li class=""><a href="#">Shrink Films</a></li>
+                    <li class=""><a href="#">Market Sectors</a></li>
+                    <li class=""><a href="@Url.Home()">Online Shop</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="wrap-nav">
+            <li>
+                <a href="#">About</a>
+                <ul>
+                    <li class=""><a href="#">Packaging Machinery</a></li>
+                    <li class=""><a href="#">Pallet Wrapping</a></li>
+                    <li class=""><a href="#">Shrink Tunnels</a></li>
+                    <li class=""><a href="#">Strapping</a></li>
+                    <li class=""><a href="#">Shrink Films</a></li>
+                    <li class=""><a href="#">Market Sectors</a></li>
+                    <li class=""><a href="@Url.Home()">Online Shop</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Services</a>
+                <ul>
+                    <li class=""><a href="#">Packaging Machinery</a></li>
+                    <li class=""><a href="#">Pallet Wrapping</a></li>
+                    <li class=""><a href="#">Shrink Tunnels</a></li>
+                    <li class=""><a href="#">Strapping</a></li>
+                    <li class=""><a href="#">Shrink Films</a></li>
+                    <li class=""><a href="#">Market Sectors</a></li>
+                    <li class=""><a href="@Url.Home()">Online Shop</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Work</a>
+                <ul>
+                    <li class=""><a href="#">Packaging Machinery</a></li>
+                    <li class=""><a href="#">Pallet Wrapping</a></li>
+                    <li class=""><a href="#">Shrink Tunnels</a></li>
+                    <li class=""><a href="#">Strapping</a></li>
+                    <li class=""><a href="#">Shrink Films</a></li>
+                    <li class=""><a href="#">Market Sectors</a></li>
+                    <li class=""><a href="@Url.Home()">Online Shop</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Work</a>
+                <ul>
+                    <li class=""><a href="#">Packaging Machinery</a></li>
+                    <li class=""><a href="#">Pallet Wrapping</a></li>
+                    <li class=""><a href="#">Shrink Tunnels</a></li>
+                    <li class=""><a href="#">Strapping</a></li>
+                    <li class=""><a href="#">Shrink Films</a></li>
+                    <li class=""><a href="#">Market Sectors</a></li>
+                    <li class=""><a href="@Url.Home()">Online Shop</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="social">
+            <a href="#">
+                <div class="social-icon">
+                    <i class="fa fa-facebook"></i>
+                </div>
+            </a>
+            <a href="#">
+                <div class="social-icon">
+                    <i class="fa fa-twitter"></i>
+                </div>
+            </a>
+            <a href="#">
+                <div class="social-icon">
+                    <i class="fa fa-codepen"></i>
+                </div>
+            </a>
+            <a href="#">
+                <div class="social-icon">
+                    <i class="fa fa-behance"></i>
+                </div>
+            </a>
+            <a href="#">
+                <div class="social-icon">
+                    <i class="fa fa-dribbble"></i>
+                </div>
+            </a>
         </div>
+    </div>
+</div>-->
+<!--<div class="nav-item">
+    <div class="container">
+        @{ Html.RenderAction("CategoriesMenuIsLead", "Categories"); }
+
+        <!--<nav class="nav-menu mobile-menu">
+            <ul>-->
+
+<!--@*<li class=""><a href="#">Packaging Machinery</a></li>
+<li class=""><a href="#">Pallet Wrapping</a></li>
+<li class=""><a href="#">Shrink Tunnels</a></li>
+<li class=""><a href="#">Strapping</a></li>
+<li class=""><a href="#">Shrink Films</a></li>*@-->
+<!--<li class=""><a href="@Url.StaticPage("ContactUsWeb")">Contact us</a></li>
+        <li class=""><a href="@Url.Home()">Online Shop</a></li>
+    </ul>
+</nav>-->
+<!--</div>
     </div>
 </header>
 
@@ -252,4 +274,4 @@
             $("#logOffForm").submit();
         });
     </script>
-}
+}-->

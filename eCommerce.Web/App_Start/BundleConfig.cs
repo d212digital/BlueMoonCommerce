@@ -19,6 +19,9 @@ namespace eCommerce.Web
                       "~/content/lib/jquery-ui-1.12.1/jquery-ui.min.css",
                       "~/content/templates/fashi/css/slicknav.min.css",
                       "~/content/templates/fashi/css/style.css",
+                      "~/content/templates/fashi/css/bootstrap.css",
+                      "~/content/templates/fashi/css/bootstrap-grid.css",
+                      "~/content/templates/fashi/css/bootstrap.css.map",
                       "~/content/css/site.css"));
 
             //Public Portal CSS Web Bundles
@@ -30,7 +33,19 @@ namespace eCommerce.Web
                       "~/content/templates/fashi/css/slicknav.min.css",
                       "~/content/templates/fashi/css/style.css",
                       "~/content/templates/fashi/css/hamburgermenu.css",
+                      "~/content/templates/fashi/css/bootstrap.css",
+                      "~/content/templates/fashi/css/bootstrap.css.map",
                       "~/content/css/site.css"));
+
+            //Public Portal CSS Web - New Bundles
+            bundles.Add(new StyleBundle("~/bundles/content/webfrontend/css").NonOrdering().Include(
+                      "~/content/templates/sws-frontend/assets/images/favicon.svg",
+                      "~/content/templates/sws-frontend/assets/css/bootstrap.min.css",
+                      "~/content/templates/sws-frontend/assets/css/lineicons.css",
+                      "~/content/templates/sws-frontend/assets/css/tiny-slider.css",
+                      "~/content/templates/sws-frontend/assets/css/glightbox.min.css",
+                      "~/content/templates/sws-frontend/style.css"
+                ));
 
             //Public Portal JavaScript/jQuery for Header
             bundles.Add(new ScriptBundle("~/bundles/content/hscripts").NonOrdering().Include(
@@ -43,16 +58,30 @@ namespace eCommerce.Web
                         "~/Content/lib/darkreader-4.9.16/darkreader.min.js",
                         "~/content/js/site.js"));
 
+            //Public Portal Javascript/JQuery for Header Web New
+            bundles.Add(new ScriptBundle("~/bundles/content/web/headerscripts").NonOrdering().Include(
+                        "~/content/lib/jquery-3.4.1/jquery.min.js",                        
+                        "~/content/lib/jquery-ui-1.12.1/jquery-ui.min.js",
+                        "~/content/lib/jquery-validation-1.19.1/jquery.validate.min.js",
+                        "~/content/lib/jquery.cookie-1.4.1/jquery.cookie.js",
+                        "~/Content/lib/jquery.lazy-1.7.10/jquery.lazy.min.js",
+                        "~/content/lib/sweetalert2-9.10.7/sweetalert2.all.min.js",
+                       "~/content/templates/sws-frontend/js/assets/js/bootstrap.bundle.min.js",
+                       "~/content/templates/sws-frontend/js/assets/js/glightbox.min.js",
+                       "~/content/templates/sws-frontend/js/assets/js/main.js",
+                       "~/content/templates/sws-frontend/js/assets/js/tiny-slider.js"));
+
+
             //Public Portal JavaScript/jQuery for Footer
             bundles.Add(new ScriptBundle("~/bundles/content/fscripts").NonOrdering().Include(
-                        "~/content/lib/popperjs-1.16.0/popper.js",
-                        "~/content/lib/bootstrap-4.4.1/js/bootstrap.min.js",
-                        "~/content/templates/fashi/js/jquery.nice-select.min.js",
-                        "~/content/templates/fashi/js/jquery.zoom.min.js",
-                        "~/content/lib/ms-dropdown-3.5.2/jquery.dd.min.js",
-                        "~/content/templates/fashi/js/jquery.slicknav.js",
-                        "~/content/templates/fashi/js/owl.carousel.min.js",
-                        "~/content/templates/fashi/js/main.js"));
+                         "~/content/lib/popperjs-1.16.0/popper.js",
+                         "~/content/lib/bootstrap-4.4.1/js/bootstrap.min.js",
+                         "~/content/templates/fashi/js/jquery.nice-select.min.js",
+                         "~/content/templates/fashi/js/jquery.zoom.min.js",
+                         "~/content/lib/ms-dropdown-3.5.2/jquery.dd.min.js",
+                         "~/content/templates/fashi/js/jquery.slicknav.js",
+                         "~/content/templates/fashi/js/owl.carousel.min.js",
+                         "~/content/templates/fashi/js/main.js"));
 
             //Public Portal CSS Bundles for RTL
             bundles.Add(new StyleBundle("~/bundles/content/rtl/css").NonOrdering().Include(
@@ -74,6 +103,18 @@ namespace eCommerce.Web
                         "~/Content/lib/jquery.lazy-1.7.10/jquery.lazy.min.js",
                         "~/Content/lib/darkreader-4.9.16/darkreader.min.js",
                         "~/content/js/site.js"));
+
+            //Public Portal JavaScript/jQuery for Web Footer for RTL
+            bundles.Add(new ScriptBundle("~/bundles/content/web/footerscripts").NonOrdering().Include(
+                        "~/content/templates/fashi/js/jquery.nice-select.min.js",
+                        "~/content/templates/fashi/js/jquery.zoom.min.js",
+                        "~/content/lib/ms-dropdown-3.5.2/jquery.dd.min.js",
+                        "~/content/templates/fashi/js/jquery.slicknav.js",
+                        "~/content/lib/popperjs-1.16.0/popper.js",
+                        "~/content/lib/bootstrap-rtl-4.2.1/js/bootstrap.min.js",                       
+                        "~/content/templates/fashi/js/owl.carousel.min.js",
+                        "~/content/templates/fashi/js/main.js"));
+
 
             //Public Portal JavaScript/jQuery for Footer for RTL
             bundles.Add(new ScriptBundle("~/bundles/content/rtl/fscripts").NonOrdering().Include(
@@ -113,7 +154,7 @@ namespace eCommerce.Web
                         "~/content/lib/bootstrap-4.4.1/js/bootstrap.min.js",
                         "~/content/lib/ms-dropdown-3.5.2/jquery.dd.min.js",
                         "~/Content/lib/darkreader-4.9.16/darkreader.min.js",
-                        "~/Content/templates/sbadmin2/js/demo/chart-area-demo.js",                        
+                        "~/Content/templates/sbadmin2/js/demo/chart-area-demo.js",
                         "~/Content/templates/sbadmin2/js/demo/chart-pie-demo.js",
                         "~/content/js/dashboard.js"));
             #endregion
@@ -127,7 +168,7 @@ namespace eCommerce.Web
             return files;
         }
     }
-    
+
     static class BundleExtentions
     {
         public static Bundle NonOrdering(this Bundle bundle)

@@ -24,7 +24,7 @@ li {
 
 nav {
     text-align: center;
-    width: 100%;
+    width: fit-content();
     position: relative;
     height: auto;
     overflow: hidden;
