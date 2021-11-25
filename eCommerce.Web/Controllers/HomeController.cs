@@ -79,7 +79,7 @@ namespace eCommerce.Web.Controllers
             return View(model);
         }
 
-        public ActionResult SearchWeb(string category, string q, decimal? from, decimal? to, string sortby, int? pageNo, int? recordSize)
+        public ActionResult SearchWebProducts(string category, string q, decimal? from, decimal? to, string sortby, int? pageNo, int? recordSize)
         {
             recordSize = recordSize ?? (int)RecordSizeEnums.Size10;
 
@@ -116,7 +116,47 @@ namespace eCommerce.Web.Controllers
 
             model.Pager = new Pager(count, pageNo, recordSize.Value);
 
-            return PartialView("_SearchWeb", model);
+            return PartialView("_SearchWebProducts", model);
+        }
+
+        public ActionResult SearchWebCategory(string category, string q, decimal? from, decimal? to, string sortby, int? pageNo, int? recordSize)
+        {
+            recordSize = recordSize ?? (int)RecordSizeEnums.Size10;
+
+            ProductsViewModel model = new ProductsViewModel
+            {
+                Categories = CategoriesService.Instance.GetCategories()
+            };
+
+            if (!string.IsNullOrEmpty(category))
+            {
+                var selectedCategory = CategoriesService.Instance.GetCategoryByName(category);
+
+                if (selectedCategory == null) return HttpNotFound();
+                else
+                {
+                    model.CategoryID = selectedCategory.ID;
+                    model.CategoryName = selectedCategory.SanitizedName;
+                    model.SelectedCategory = selectedCategory;
+                    model.SearchedCategories = CategoryHelpers.GetAllCategoryChildrens(selectedCategory, model.Categories);
+
+                }
+            }
+
+            model.SearchTerm = q;
+            model.PriceFrom = from;
+            model.PriceTo = to;
+            model.SortBy = sortby;
+            model.PageSize = recordSize;
+
+            var selectedCategoryIDs = model.SearchedCategories != null ? model.SearchedCategories.Select(x => x.ID).ToList() : null;
+
+
+            model.Products = ProductsService.Instance.SearchProducts(selectedCategoryIDs, model.SearchTerm, model.PriceFrom, model.PriceTo, model.SortBy, pageNo, recordSize.Value, activeOnly: true, out int count, stockCheckCount: null);
+
+            model.Pager = new Pager(count, pageNo, recordSize.Value);
+
+            return PartialView("_SearchWebCategory", model);
         }
 
         public ActionResult PriceRangeFilter(decimal? priceFrom, decimal? priceTo)

@@ -234,15 +234,15 @@ namespace eCommerce.Web
 
             routes.MapRoute(
                 name: "SearchWebProducts",
-                url: "searchweb/{category}",
-                defaults: new { area = "", controller = "Home", action = "SearchWeb", category = UrlParameter.Optional },
+                url: "searchproduct/{category}",
+                defaults: new { area = "", controller = "Home", action = "SearchWebProducts", category = UrlParameter.Optional },
                 namespaces: new[] { "eCommerce.Web.Controllers" }
             );
 
             routes.MapRoute(
                 name: "LanguageBased_SearchWebProducts",
-                url: "{lang}/searchweb/{category}",
-                defaults: new { area = "", controller = "Home", action = "SearchWeb", category = UrlParameter.Optional },
+                url: "{lang}/searchproduct/{category}",
+                defaults: new { area = "", controller = "Home", action = "SearchWebProducts", category = UrlParameter.Optional },
                 namespaces: new[] { "eCommerce.Web.Controllers" }
             );
 

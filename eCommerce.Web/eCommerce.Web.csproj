@@ -4562,9 +4562,15 @@
     <Content Include="Content\templates\sws-frontend\assets\images\blog\3.jpg" />
     <Content Include="Content\templates\sws-frontend\assets\images\blog\b6.jpg" />
     <Content Include="Content\templates\sws-frontend\assets\images\call-action\overlay.png" />
+    <Content Include="Content\templates\sws-frontend\assets\images\client-logo\amazon.png" />
+    <Content Include="Content\templates\sws-frontend\assets\images\client-logo\assurant.png" />
     <Content Include="Content\templates\sws-frontend\assets\images\client-logo\ayroui.svg" />
+    <Content Include="Content\templates\sws-frontend\assets\images\client-logo\baxters.png" />
+    <Content Include="Content\templates\sws-frontend\assets\images\client-logo\costco.png" />
     <Content Include="Content\templates\sws-frontend\assets\images\client-logo\ecomhtml.svg" />
+    <Content Include="Content\templates\sws-frontend\assets\images\client-logo\enviro-agency.png" />
     <Content Include="Content\templates\sws-frontend\assets\images\client-logo\graygrids.svg" />
+    <Content Include="Content\templates\sws-frontend\assets\images\client-logo\kerry-foods.png" />
     <Content Include="Content\templates\sws-frontend\assets\images\client-logo\lineicons.svg" />
     <Content Include="Content\templates\sws-frontend\assets\images\client-logo\tailwindtemplates.svg" />
     <Content Include="Content\templates\sws-frontend\assets\images\client-logo\uideck.svg" />
@@ -5027,7 +5033,7 @@
     <Content Include="Views\Categories\_CategoriesMenuWeb.cshtml" />
     <Content Include="Views\Contents\ContactUsWeb.cshtml" />
     <Content Include="Views\Categories\_CategoriesHomeWeb.cshtml" />
-    <Content Include="Views\Home\_SearchWeb.cshtml" />
+    <Content Include="Views\Home\_SearchWebProducts.cshtml" />
     <Content Include="Scripts\bootstrap.min.js.map" />
     <Content Include="Scripts\bootstrap.js.map" />
     <Content Include="Scripts\bootstrap.esm.min.js.map" />
@@ -5036,6 +5042,7 @@
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Views\WebLeads\Index - Copy.cshtml" />
     <Content Include="Views\Shared\_WebFooterStylesScripts.cshtml" />
+    <Content Include="Views\Home\_SearchWebCategory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\eCommerce.Data\eCommerce.Data.csproj">
