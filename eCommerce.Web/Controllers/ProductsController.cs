@@ -79,5 +79,20 @@ namespace eCommerce.Web.Controllers
 
             return View(model);
         }
+
+        public ActionResult DetailsWeb(int ID, string category)
+        {
+            ProductDetailsViewModel model = new ProductDetailsViewModel
+            {
+                Product = ProductsService.Instance.GetProductByID(ID, activeOnly: false)
+            };
+
+            if (model.Product == null || !model.Product.Category.SanitizedName.ToLower().Equals(category))
+                return HttpNotFound();
+
+            model.Rating = CommentsService.Instance.GetProductRating(model.Product.ID);
+
+            return View("DetailsWeb", model);
+        }
     }
 }

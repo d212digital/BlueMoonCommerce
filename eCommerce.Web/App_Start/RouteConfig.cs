@@ -245,7 +245,7 @@ namespace eCommerce.Web
                 defaults: new { area = "", controller = "Home", action = "SearchWebProducts", category = UrlParameter.Optional },
                 namespaces: new[] { "eCommerce.Web.Controllers" }
             );
-
+            
             routes.MapRoute(
                 name: "ProductDetails",
                 url: "{category}/product/{ID}/{sanitizedtitle}",
@@ -257,6 +257,20 @@ namespace eCommerce.Web
                 name: "LanguageBased_ProductDetails",
                 url: "{lang}/{category}/product/{ID}/{sanitizedtitle}",
                 defaults: new { area = "", controller = "Products", action = "Details", sanitizedtitle = UrlParameter.Optional },
+                namespaces: new[] { "eCommerce.Web.Controllers" }
+            );
+
+            routes.MapRoute(
+                name: "ProductDetailsWeb",
+                url: "{category}/{sanitizedtitle}/details",
+                defaults: new { area = "", controller = "Products", action = "DetailsWeb", sanitizedtitle = UrlParameter.Optional },
+                namespaces: new[] { "eCommerce.Web.Controllers" }
+            );
+
+            routes.MapRoute(
+                name: "LanguageBased_ProductDetailsWeb",
+                url: "{lang}/{category}/{sanitizedtitle}/details",
+                defaults: new { area = "", controller = "Products", action = "DetailsWeb", sanitizedtitle = UrlParameter.Optional },
                 namespaces: new[] { "eCommerce.Web.Controllers" }
             );
 

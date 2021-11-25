@@ -264,9 +264,9 @@ namespace eCommerce.Shared.Helpers
 
             if (ConfigurationsHelper.EnableMultilingual)
             {
-                routeURL = helper.RouteUrl("LanguageBased_SearchProducts", routeValues);
+                routeURL = helper.RouteUrl("LanguageBased_SearchWebProducts", routeValues);
             }
-            else routeURL = helper.RouteUrl("SearchProducts", routeValues);
+            else routeURL = helper.RouteUrl("SearchWebProducts", routeValues);
 
             routeURL = HttpUtility.UrlDecode(routeURL, System.Text.Encoding.UTF8);
             return routeURL.ToLower();
@@ -291,6 +291,29 @@ namespace eCommerce.Shared.Helpers
                 routeURL = helper.RouteUrl("LanguageBased_ProductDetails", routeValues);
             }
             else routeURL = helper.RouteUrl("ProductDetails", routeValues);
+
+            routeURL = HttpUtility.UrlDecode(routeURL, System.Text.Encoding.UTF8);
+            return routeURL.ToLower();
+        }
+        public static string ProductDetailsWeb(this UrlHelper helper, string category, int ID, string sanitizedtitle = "")
+        {
+            string routeURL = string.Empty;
+
+            var routeValues = new RouteValueDictionary();
+
+            routeValues.Add("category", category);
+            routeValues.Add("ID", ID);
+
+            if (!string.IsNullOrEmpty(sanitizedtitle))
+            {
+                routeValues.Add("sanitizedtitle", sanitizedtitle);
+            }
+
+            if (ConfigurationsHelper.EnableMultilingual)
+            {
+                routeURL = helper.RouteUrl("LanguageBased_ProductDetailsWeb", routeValues);
+            }
+            else routeURL = helper.RouteUrl("ProductDetailsWeb", routeValues);
 
             routeURL = HttpUtility.UrlDecode(routeURL, System.Text.Encoding.UTF8);
             return routeURL.ToLower();

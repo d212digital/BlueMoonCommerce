@@ -5042,7 +5042,7 @@
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Views\WebLeads\Index - Copy.cshtml" />
     <Content Include="Views\Shared\_WebFooterStylesScripts.cshtml" />
-    <Content Include="Views\Home\_SearchWebCategory.cshtml" />
+    <Content Include="Views\Products\DetailsWeb.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\eCommerce.Data\eCommerce.Data.csproj">

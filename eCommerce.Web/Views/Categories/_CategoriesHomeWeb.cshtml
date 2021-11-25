@@ -28,12 +28,17 @@
                                     <a href="@Url.SearchWebProducts(category.SanitizedName)">
                                         @(currentLanguageCategoryRecord != null ? currentLanguageCategoryRecord.Name : string.Empty)
                                     </a>
-                                </h4>                                
-                                    <p>
-                                        Lorem ipsum dolor sit amet, adipscing elitr, sed diam nonumy
-                                        eirmod tempor ividunt labor dolore magna.
-                                    </p>
+                                </h4>
+                                <p>
+                                    Lorem ipsum dolor sit amet, adipscing elitr, sed diam nonumy
+                                    eirmod tempor ividunt labor dolore magna.
+                                </p>
+                                <div class="btn primary-btn rounded-full mt-4 center mb-3">
+                                    <a href="@Url.SearchWebProducts(category.SanitizedName)">
+                                        <span class="text-white">View Details</span>
+                                    </a>
                                 </div>
+                            </div>
                             </div>
                         </div>
                 }

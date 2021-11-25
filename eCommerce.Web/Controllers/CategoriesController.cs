@@ -47,7 +47,7 @@ namespace eCommerce.Web.Controllers
 
             return PartialView("_CategoriesMenuWeb", model);
         }
-
+       
         public ActionResult CategoriesHomeIsLead(string lang)
         {
             CategoriesMenuViewModel model = new CategoriesMenuViewModel();
