@@ -23,14 +23,12 @@
                                     @Html.Picture(picture: category.Picture, defaultPic: "site/default-bg.jpg", alt: currentLanguageCategoryRecord != null ? currentLanguageCategoryRecord.Name : string.Empty)
                                 </div>
                             </a>
-                            <div class="card-body">
-                                <h5 class="card-title">
+                            <div class="service-content">
+                                <h4>
                                     <a href="@Url.SearchWebProducts(category.SanitizedName)">
                                         @(currentLanguageCategoryRecord != null ? currentLanguageCategoryRecord.Name : string.Empty)
                                     </a>
-                                </h5>
-                                <div class="service-content">
-                                    <h4>Refreshing Design</h4>
+                                </h4>                                
                                     <p>
                                         Lorem ipsum dolor sit amet, adipscing elitr, sed diam nonumy
                                         eirmod tempor ividunt labor dolore magna.
@@ -38,10 +36,6 @@
                                 </div>
                             </div>
                         </div>
-
-
-                    </div>
-
                 }
             </div>
         </div>
