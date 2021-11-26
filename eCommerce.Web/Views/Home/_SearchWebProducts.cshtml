@@ -7,7 +7,7 @@
     Layout = "~/Views/Shared/_WebLayout.cshtml";
 }
 
-<section class="services-area services-eight">
+<section class="services-area services-eight">    
     <!--======  Start Section Title Five ======-->
     <div class="section-title-five">
         <div class="container">
@@ -56,7 +56,7 @@
 
                             <div class="col-lg-4 col-md-6">
                                 <div class="single-services">
-                                    
+
                                     <div data-href="@detailsLink">
                                         <div class="single-banner d-flex align-items-center">
                                             @Html.Thumbnail(picture: thumbnail, targetSize: 350, seoTitle: sanitizedSEOTitle, classes: "m-auto", alt: currentLanguageProductRecord != null ? currentLanguageProductRecord.Name : string.Empty)
@@ -65,7 +65,7 @@
                                     <div class="service-content text-capitalize text-center">
 
                                         <a href="@detailsLink">
-                                            
+
                                             <h5>
                                                 @(currentLanguageProductRecord != null ? currentLanguageProductRecord.Name : string.Empty)
                                             </h5>

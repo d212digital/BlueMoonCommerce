@@ -37,7 +37,6 @@
                             </li>
                         </ul>
                     </div>
-
                     <div class="navbar-btn d-none d-lg-inline-block">
                         <a class="menu-bar" href="#side-menu-left"><i class="lni lni-menu"></i></a>
                     </div>
@@ -68,14 +67,20 @@
         </p>
         <!-- logo -->
         <div class="sidebar-menu">
-            <h5 class="menu-title">Quick Links</h5>
+            <h5 class="menu-title">Machinery Links</h5>
             <ul>
-                <li><a href="javascript:void(0)">About Us</a></li>
-                <li><a href="javascript:void(0)">Our Machinery</a></li>
-                <li><a href="javascript:void(0)">Latest News</a></li>
-                <li><a href="javascript:void(0)">Contact Us</a></li>
+                <li>@{ Html.RenderAction("CategoriesMenuIsLead", "Categories"); }</li>
             </ul>
         </div>
+        <div class="sidebar-menu">
+            <h5 class="menu-title">Quick Links</h5>
+            <ul>
+                <li class=""><a href="@Url.Home()">Online Shop</a></li>
+                <li><a href="javascript:void(0)">Contact Us</a></li>
+                <li><a href="javascript:void(0)">About Us</a></li>
+                <li><a href="javascript:void(0)">Latest News</a></li>
+            </ul>
+        </div>        
         <!-- menu -->
         <div class="sidebar-social align-items-center justify-content-center">
             <h5 class="social-title">Follow Us On</h5>

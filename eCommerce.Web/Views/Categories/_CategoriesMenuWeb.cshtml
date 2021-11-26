@@ -13,14 +13,13 @@
 
                         var currentLanguageCategoryRecord = category.CategoryRecords.FirstOrDefault(x => x.LanguageID == AppDataHelper.CurrentLanguage.ID);
                         <li>
-                            <a href="@Url.SearchProducts(category.SanitizedName)">
+                            <a href="@Url.SearchWebProducts(category.SanitizedName)">
                                 @(currentLanguageCategoryRecord != null ? currentLanguageCategoryRecord.Name : string.Empty)
                             </a>
                         </li>
 
-                    }
-                    <li class=""><a href="@Url.StaticPage("ContactUsWeb")">Contact us</a></li>
-                    <li class=""><a href="@Url.Home()">Online Shop</a></li>
+                    }                  
+ 
                 </ul>                   
             </nav>                    
 }

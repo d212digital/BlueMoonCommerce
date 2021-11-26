@@ -31,6 +31,9 @@
 
     var productStockTextColor = Model.Product.StockQuantity > 0 ? "text-success bold" : "text-danger bold";
 
+
+<section class="services-area services-eight">
+    <!--======  Start Section Title Five ======-->
     <div class="breacrumb-section">
         <div class="container">
             <div class="row">
@@ -43,45 +46,43 @@
                         {
                             var currentLanguageParentCategoryRecord = Model.Product.Category.ParentCategory.CategoryRecords.FirstOrDefault(x => x.LanguageID == AppDataHelper.CurrentLanguage.ID);
 
-                            <a href="@Url.SearchProducts(category: Model.Product.Category.ParentCategory.SanitizedName)">@(currentLanguageParentCategoryRecord != null ? currentLanguageParentCategoryRecord.Name : string.Empty)</a>
+                            <a href="@Url.SearchWebProducts(category: Model.Product.Category.ParentCategory.SanitizedName)">@(currentLanguageParentCategoryRecord != null ? currentLanguageParentCategoryRecord.Name : string.Empty)</a>
                         }
-                        <a href="@Url.SearchProducts(category: Model.Product.Category.SanitizedName)">@(currentLanguageCategoryRecord != null ? currentLanguageCategoryRecord.Name : string.Empty)</a>
+                        <a href="@Url.SearchWebProducts(category: Model.Product.Category.SanitizedName)">@(currentLanguageCategoryRecord != null ? currentLanguageCategoryRecord.Name : string.Empty)</a>
                         <span>@(currentLanguageProductRecord != null ? currentLanguageProductRecord.Name : string.Empty)</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <section class="services-area services-eight">
-        <!--======  Start Section Title Five ======-->
-        <div class="section-title-five">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="content">
-                            <h6>
-                                Back to > <a href="@Url.SearchProducts(category: Model.Product.Category.SanitizedName)">
-                                    <span>
-                                        @(currentLanguageCategoryRecord != null ? currentLanguageCategoryRecord.Name : string.Empty)
-                                    </span>
-                                </a>
-                            </h6>
-                            <div class="pd-title">
+    <div class="section-title-six mt-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="content">
+                        <h6>
+                            <a href="@Url.SearchWebProducts(category: Model.Product.Category.SanitizedName)">
+                                <span>
+                                    @(currentLanguageCategoryRecord != null ? currentLanguageCategoryRecord.Name : string.Empty)
+                                </span>
+                            </a>
+                        </h6>
+                        <div class="pd-title">
 
-                                <h2>
-                                    @(currentLanguageProductRecord != null ? currentLanguageProductRecord.Name : string.Empty)
-                                </h2>
-                            </div>
+                            <h2>
+                                @(currentLanguageProductRecord != null ? currentLanguageProductRecord.Name : string.Empty)
+                            </h2>
                         </div>
                     </div>
                 </div>
-                <!-- row -->
             </div>
-            <!-- container -->
+            <!-- row -->
         </div>
-        <!--======  End Section Title Five ======-->
+        <!-- container -->
+    </div>
+    <!--======  End Section Title Five ======-->
 
-    </section>
+</section>
 
     <section class="services-area services-nine">
         <div class="container">
@@ -149,37 +150,48 @@
         <div class="product-tab">
             <div class="tab-item">
                 <ul class="nav" role="tablist">
-                    @if (currentLanguageProductRecord != null && !string.IsNullOrEmpty(currentLanguageProductRecord.Description))
-                    {
-                        <li>
-                            <a data-toggle="tab" href="#description-tab" role="tab" class="active">@("PP.ProductDetails.Description".Localized())</a>
-                        </li>
-                    }
                     @if (currentLanguageProductRecord != null && currentLanguageProductRecord.ProductSpecifications != null && currentLanguageProductRecord.ProductSpecifications.Count > 0)
                     {
                         <li>
-                            <a data-toggle="tab" href="#specification-tab" role="tab">@("PP.ProductDetails.ProductSpecifications".Localized())</a>
+                            <a data-toggle="tab" href="#specification-tab" role="tab" class="active">@("PP.ProductDetails.ProductSpecifications".Localized())</a>
                         </li>
+
                     }
+                    @if (currentLanguageProductRecord != null && !string.IsNullOrEmpty(currentLanguageProductRecord.Description))
+                    {
+
+                        <li>
+                            <a data-toggle="tab" href="#description-tab" role="tab">@("PP.ProductDetails.Description".Localized())</a>
+                        </li>
+
+                    }
+                    <li>
+                        <a data-toggle="tab" href="#video-tab" role="tab">Watch Video</a>
+                    </li>
+
 
                 </ul>
             </div>
             <div class="tab-item-content">
                 <div class="tab-content">
+
+                    @if (currentLanguageProductRecord != null && currentLanguageProductRecord.ProductSpecifications != null && currentLanguageProductRecord.ProductSpecifications.Count > 0)
+                    {
+                        <div class="tab-pane fade active show" id="specification-tab" role="tabpanel">
+                            @{ Html.RenderPartial("_ProductSpecifications", currentLanguageProductRecord.ProductSpecifications); }
+                        </div>
+                    }
                     @if (currentLanguageProductRecord != null && !string.IsNullOrEmpty(currentLanguageProductRecord.Description))
                     {
-                        <div class="tab-pane fade-in active show" id="description-tab" role="tabpanel">
+                        <div class="tab-pane fade-in" id="description-tab" role="tabpanel">
                             <div class="product-content ml-3 pt-3">
                                 @Html.Raw(currentLanguageProductRecord.Description)
                             </div>
                         </div>
                     }
-                    @if (currentLanguageProductRecord != null && currentLanguageProductRecord.ProductSpecifications != null && currentLanguageProductRecord.ProductSpecifications.Count > 0)
-                    {
-                        <div class="tab-pane fade" id="specification-tab" role="tabpanel">
-                            @{ Html.RenderPartial("_ProductSpecifications", currentLanguageProductRecord.ProductSpecifications); }
-                        </div>
-                    }
+                    <div class="tab-pane fade" id="video-tab" role="tabpanel">
+                        Watch Video
+                    </div>
 
                 </div>
             </div>
