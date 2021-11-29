@@ -13,17 +13,19 @@
         <div class="row">
             @foreach (var product in Model.Products)
             {
-                var currentLanguageProductRecord = product.ProductRecords.FirstOrDefault(x => x.LanguageID == AppDataHelper.CurrentLanguage.ID);
+                if (product.IsLead == false)
+                {
+                    var currentLanguageProductRecord = product.ProductRecords.FirstOrDefault(x => x.LanguageID == AppDataHelper.CurrentLanguage.ID);
 
-                var currentLanguageProductCategoryRecord = product.Category.CategoryRecords.FirstOrDefault(x => x.LanguageID == AppDataHelper.CurrentLanguage.ID);
+                    var currentLanguageProductCategoryRecord = product.Category.CategoryRecords.FirstOrDefault(x => x.LanguageID == AppDataHelper.CurrentLanguage.ID);
 
-                var sanitizedSEOTitle = AppDataHelper.CurrentLanguage.ShortCode == LanguagesHelper.EnglishLanguageShortCode && currentLanguageProductRecord != null ? currentLanguageProductRecord.Name.SanitizeLowerString() : string.Empty;
+                    var sanitizedSEOTitle = AppDataHelper.CurrentLanguage.ShortCode == LanguagesHelper.EnglishLanguageShortCode && currentLanguageProductRecord != null ? currentLanguageProductRecord.Name.SanitizeLowerString() : string.Empty;
 
-                var detailsLink = Url.ProductDetails(category: product.Category.SanitizedName, ID: product.ID, sanitizedtitle: sanitizedSEOTitle);
+                    var detailsLink = Url.ProductDetails(category: product.Category.SanitizedName, ID: product.ID, sanitizedtitle: sanitizedSEOTitle);
 
-                var productPrice = product.Discount.HasValue && product.Discount.Value > 0 ? product.Discount.Value : product.Price;
-                
-                var thumbnail = PictureHelper.GetProductThumbnail(product.ProductPictures, product.ThumbnailPictureID);
+                    var productPrice = product.Discount.HasValue && product.Discount.Value > 0 ? product.Discount.Value : product.Price;
+
+                    var thumbnail = PictureHelper.GetProductThumbnail(product.ProductPictures, product.ThumbnailPictureID);
 
                 <div class="col-lg-3 col-sm-6">
                     <div class="product-item">
@@ -59,6 +61,7 @@
                         </div>
                     </div>
                 </div>
+                }
             }
         </div>
     </div>

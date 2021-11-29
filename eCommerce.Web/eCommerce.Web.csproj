@@ -5043,6 +5043,8 @@
     <Content Include="Views\WebLeads\Index - Copy.cshtml" />
     <Content Include="Views\Shared\_WebFooterStylesScripts.cshtml" />
     <Content Include="Views\Products\DetailsWeb.cshtml" />
+    <Content Include="Views\Shared\_WebHeaderIndex.cshtml" />
+    <Content Include="Views\Shared\_WebLayoutIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\eCommerce.Data\eCommerce.Data.csproj">

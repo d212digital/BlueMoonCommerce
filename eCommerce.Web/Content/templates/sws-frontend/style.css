@@ -1,10 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap");
+
 /*===========================
   COMMON css 
 ===========================*/
 :root {
     --font-family: "Inter", sans-serif;
-    --primary: #155bd5;
+    --primary: #273B6B;
     --primary-new: #273B6B;
     --primary-dark: #1c3ab6;
     --primary-light: #e2f1ff;
@@ -373,7 +374,7 @@ p {
     text-align: center;
     max-width: 550px;
     margin: auto;
-    margin-bottom: -150px;
+    margin-bottom: -110px;
     position: relative;
     z-index: 5;
 }
@@ -1967,7 +1968,7 @@ p {
 }
 /* Product Details Tabs Web */
 .product-tab {
-    padding-top: 30px;
+    padding-top: 10px;
 }
 
     .product-tab .tab-item ul li {
@@ -2001,7 +2002,7 @@ p {
 }
 
     .tab-item ul li a.active {
-        color: var(--primary-new);
+        color: var(--primary);
     }
 
         .tab-item ul li a.active:before {
@@ -2014,7 +2015,7 @@ p {
         top: -1px;
         width: 100%;
         height: 5px;
-        background: #c4161c;
+        background: var(--primary);
         content: "";
         opacity: 0;
     }
