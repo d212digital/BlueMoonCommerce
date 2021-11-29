@@ -5045,6 +5045,8 @@
     <Content Include="Views\Products\DetailsWeb.cshtml" />
     <Content Include="Views\Shared\_WebHeaderIndex.cshtml" />
     <Content Include="Views\Shared\_WebLayoutIndex.cshtml" />
+    <Content Include="Views\Categories\_CategoriesSubMenuWeb.cshtml" />
+    <Content Include="Views\Home\_SearchWebCategories.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\eCommerce.Data\eCommerce.Data.csproj">

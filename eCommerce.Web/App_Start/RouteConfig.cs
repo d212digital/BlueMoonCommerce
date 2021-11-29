@@ -245,7 +245,20 @@ namespace eCommerce.Web
                 defaults: new { area = "", controller = "Home", action = "SearchWebProducts", category = UrlParameter.Optional },
                 namespaces: new[] { "eCommerce.Web.Controllers" }
             );
-            
+            routes.MapRoute(
+                name: "SearchWebCategories",
+                url: "searchproductcategories/{category}",
+                defaults: new { area = "", controller = "Home", action = "SearchWebCategories", category = UrlParameter.Optional },
+                namespaces: new[] { "eCommerce.Web.Controllers" }
+            );
+
+            routes.MapRoute(
+                name: "LanguageBased_SearchWebCategories",
+                url: "{lang}/searchproductcategories/{category}",
+                defaults: new { area = "", controller = "Home", action = "SearchWebCategories", category = UrlParameter.Optional },
+                namespaces: new[] { "eCommerce.Web.Controllers" }
+            );
+
             routes.MapRoute(
                 name: "ProductDetails",
                 url: "{category}/product/{ID}/{sanitizedtitle}",

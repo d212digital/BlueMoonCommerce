@@ -47,7 +47,24 @@ namespace eCommerce.Web.Controllers
 
             return PartialView("_CategoriesMenuWeb", model);
         }
-       
+        public ActionResult CategoriesSubMenuWeb(string lang)
+        {
+            CategoriesMenuViewModel model = new CategoriesMenuViewModel();
+
+            var categories = CategoriesService.Instance.GetCategories();
+
+            if (categories != null && categories.Count > 0)
+            {
+                //remove uncategorized category from categories list.
+                categories = categories.Where(x => x.ID != 1).ToList();
+                categories = categories.Where(x => x.IsLead == true).ToList();
+
+                model.CategoryWithChildrens = CategoryHelpers.MakeCategoriesHierarchy(categories);
+            }
+
+            return PartialView("_CategoriesSubMenuWeb", model);
+        }
+
         public ActionResult CategoriesHomeIsLead(string lang)
         {
             CategoriesMenuViewModel model = new CategoriesMenuViewModel();
