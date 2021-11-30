@@ -32,6 +32,8 @@ namespace eCommerce.Web.Areas.Dashboard.ViewModels
         public bool InActive { get; set; }
 
         public bool IsLead { get; set; }
+
+        public string VideoLink { get; set; }
         public int StockQuantity { get; set; }
 
         public int ProductRecordID { get; set; }

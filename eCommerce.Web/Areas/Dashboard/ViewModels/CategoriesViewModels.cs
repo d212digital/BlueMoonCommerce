@@ -26,6 +26,8 @@ namespace eCommerce.Web.Areas.Dashboard.ViewModels
         public int? ParentCategoryID { get; set; }
         public bool isFeatured { get; set; }
         public bool IsLead { get; set; }
+
+        public string VideoLink { get; set; }
         public string SanitizedName { get; set; }
         public int DisplaySeqNo { get; set; }
 

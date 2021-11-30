@@ -27,6 +27,7 @@ namespace eCommerce.Entities
 
         public bool? IsLead { get; set; }
 
+        
         public virtual List<ProductPicture> ProductPictures { get; set; }
 
         public virtual List<ProductRecord> ProductRecords { get; set; }
@@ -43,6 +44,7 @@ namespace eCommerce.Entities
         public string Summary { get; set; }
         public string Description { get; set; }
 
+        public string VideoLink { get; set; }
         public virtual List<ProductSpecification> ProductSpecifications { get; set; }
     }
 }

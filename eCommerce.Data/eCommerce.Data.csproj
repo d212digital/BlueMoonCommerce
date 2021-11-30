@@ -71,6 +71,26 @@
     <Compile Include="Migrations\202111170845204_addIsLeadCategory.designer.cs">
       <DependentUpon>202111170845204_addIsLeadCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202111301104294_addVideoLink.cs" />
+    <Compile Include="Migrations\202111301104294_addVideoLink.designer.cs">
+      <DependentUpon>202111301104294_addVideoLink.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111301108461_addYouTubeLink.cs" />
+    <Compile Include="Migrations\202111301108461_addYouTubeLink.designer.cs">
+      <DependentUpon>202111301108461_addYouTubeLink.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111301123380_addYouTubeLink1.cs" />
+    <Compile Include="Migrations\202111301123380_addYouTubeLink1.designer.cs">
+      <DependentUpon>202111301123380_addYouTubeLink1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111301138555_addYouTubeLinkProducts.cs" />
+    <Compile Include="Migrations\202111301138555_addYouTubeLinkProducts.designer.cs">
+      <DependentUpon>202111301138555_addYouTubeLinkProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111301204178_addAndReplaceVideoLink.cs" />
+    <Compile Include="Migrations\202111301204178_addAndReplaceVideoLink.designer.cs">
+      <DependentUpon>202111301204178_addAndReplaceVideoLink.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -93,6 +113,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202111170845204_addIsLeadCategory.resx">
       <DependentUpon>202111170845204_addIsLeadCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111301104294_addVideoLink.resx">
+      <DependentUpon>202111301104294_addVideoLink.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111301108461_addYouTubeLink.resx">
+      <DependentUpon>202111301108461_addYouTubeLink.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111301123380_addYouTubeLink1.resx">
+      <DependentUpon>202111301123380_addYouTubeLink1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111301138555_addYouTubeLinkProducts.resx">
+      <DependentUpon>202111301138555_addYouTubeLinkProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111301204178_addAndReplaceVideoLink.resx">
+      <DependentUpon>202111301204178_addAndReplaceVideoLink.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

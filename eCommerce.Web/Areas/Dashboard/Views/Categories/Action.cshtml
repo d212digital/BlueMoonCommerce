@@ -53,28 +53,35 @@
                     </ul>
                 </div>
             }
-            <div class="card-body">
-                <div class="form-group">
-                    <label>
-                        @("Dashboard.Categories.Action.Name".Localized())
-                    </label>
-                    <input class="form-control" name="Name" value="@Model.Name" placeholder="@("Dashboard.Categories.Action.NamePlaceholder".Localized())" />
-                </div>
-
-                <div class="form-group">
-                    <label>
-                        @("Dashboard.Categories.Action.Summary".Localized())
-                    </label>
-                    <textarea class="form-control" name="Summary" placeholder="@("Dashboard.Categories.Action.SummaryPlaceholder".Localized())" rows="2">@Model.Summary</textarea>
-                </div>
-
-                <div class="form-group mb-0">
-                    <label>
-                        @("Dashboard.Categories.Action.Description".Localized())
-                    </label>
-                    <textarea class="form-control" name="Description" placeholder="@("Dashboard.Categories.Action.DescriptionPlaceholder".Localized())" rows="6">@Model.Description</textarea>
-                </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label>
+                    @("Dashboard.Categories.Action.Name".Localized())
+                </label>
+                <input class="form-control" name="Name" value="@Model.Name" placeholder="@("Dashboard.Categories.Action.NamePlaceholder".Localized())" />
             </div>
+
+            <div class="form-group">
+                <label>
+                    @("Dashboard.Categories.Action.Summary".Localized())
+                </label>
+                <textarea class="form-control" name="Summary" placeholder="@("Dashboard.Categories.Action.SummaryPlaceholder".Localized())" rows="2">@Model.Summary</textarea>
+            </div>
+
+            <div class="form-group mb-4">
+                <label>
+                    @("Dashboard.Categories.Action.Description".Localized())
+                </label>
+                <textarea class="form-control" name="Description" placeholder="@("Dashboard.Categories.Action.DescriptionPlaceholder".Localized())" rows="6">@Model.Description</textarea>
+            </div>
+            <!-- May add this to be used on category view pages for now leave commented out -->
+            @*<div class="form-group">
+                <label>
+                    Add Product Video
+                </label>
+                <input class="form-control" name="VideoLink" value="@Model.VideoLink" placeholder="Add Video Link" />
+            </div>*@
+        </div>
         </div>
         <div class="card mt-3">
             <div class="card-body">

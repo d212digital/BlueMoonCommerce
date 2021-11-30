@@ -79,9 +79,10 @@ namespace eCommerce.Web.Areas.Dashboard.Controllers
                 model.Supplier = product.Supplier;
 
                 model.InActive = !product.IsActive;
-                model.IsLead = (bool)product.IsLead;
+                model.IsLead = (bool)product.IsLead;                
               
                 model.ProductRecordID = currentLanguageRecord.ID;
+                model.VideoLink = currentLanguageRecord.VideoLink;
                 model.Name = currentLanguageRecord.Name;
                 model.Summary = currentLanguageRecord.Summary;
                 model.Description = currentLanguageRecord.Description;
@@ -126,6 +127,7 @@ namespace eCommerce.Web.Areas.Dashboard.Controllers
 
                     product.isFeatured = model.isFeatured;
                     product.IsLead = model.IsLead;
+                    
                     product.ModifiedOn = DateTime.Now;
 
                     if (!string.IsNullOrEmpty(model.ProductPictures))
@@ -172,6 +174,7 @@ namespace eCommerce.Web.Areas.Dashboard.Controllers
                     currentLanguageRecord.Name = model.Name;
                     currentLanguageRecord.Summary = model.Summary;
                     currentLanguageRecord.Description = model.Description;
+                    currentLanguageRecord.VideoLink = model.VideoLink;
 
                     currentLanguageRecord.ModifiedOn = DateTime.Now;
 
@@ -262,6 +265,7 @@ namespace eCommerce.Web.Areas.Dashboard.Controllers
                         Name = model.Name,
                         Summary = model.Summary,
                         Description = model.Description,
+                        VideoLink = model.VideoLink,
 
                         ModifiedOn = DateTime.Now
                     };
@@ -336,6 +340,7 @@ namespace eCommerce.Web.Areas.Dashboard.Controllers
                 Name = formCollection["Name"],
                 Summary = formCollection["Summary"],
                 Description = formCollection["Description"],
+                VideoLink = formCollection["VideoLink"],
 
                 ProductSpecifications = new List<ProductSpecification>()
             };

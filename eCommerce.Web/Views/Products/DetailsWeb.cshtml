@@ -180,7 +180,7 @@
 
                         }
                         <li>
-                            <a data-toggle="tab" href="#video-tab" role="tab">See it action</a>
+                            <a data-toggle="tab" href="#video-tab" role="tab">See it in action</a>
                         </li>
 
 
@@ -203,10 +203,14 @@
                                 </div>
                             </div>
                         }
-                        <div class="tab-pane fade" id="video-tab" role="tabpanel">
-                            Watch Video
-                        </div>
-
+                        @if (currentLanguageProductRecord != null && !string.IsNullOrEmpty(currentLanguageProductRecord.VideoLink))
+                        {
+                            <div class="tab-pane fade-in" id="video-tab" role="tabpanel">
+                                <div class="product-content ml-3 pt-3">
+                                    @Html.Raw(currentLanguageProductRecord.VideoLink)
+                                </div>
+                            </div>
+                        }
                     </div>
                 </div>
             </div>

@@ -58,82 +58,89 @@
                     </ul>
                 </div>
             }
-            <div class="card-body">
-                <div class="form-group">
-                    <label>
-                        @("Dashboard.Products.Action.Name".Localized())
-                    </label>
-                    <input class="form-control" name="Name" value="@Model.Name" placeholder="@("Dashboard.Products.Action.NamePlaceholder".Localized())" />
-                </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label>
+                    @("Dashboard.Products.Action.Name".Localized())
+                </label>
+                <input class="form-control" name="Name" value="@Model.Name" placeholder="@("Dashboard.Products.Action.NamePlaceholder".Localized())" />
+            </div>
 
-                <div class="form-group">
-                    <label>
-                        @("Dashboard.Products.Action.Summary".Localized())
-                    </label>
-                    <textarea class="form-control" id="Summary" name="Summary" placeholder="@("Dashboard.Products.Action.SummaryPlaceholder".Localized())" rows="3">@Model.Summary</textarea>
-                </div>
+            <div class="form-group">
+                <label>
+                    @("Dashboard.Products.Action.Summary".Localized())
+                </label>
+                <textarea class="form-control" id="Summary" name="Summary" placeholder="@("Dashboard.Products.Action.SummaryPlaceholder".Localized())" rows="3">@Model.Summary</textarea>
+            </div>
 
-                <div class="form-group">
-                    <label>
-                        @("Dashboard.Products.Action.Description".Localized())
-                    </label>
-                    <textarea class="form-control" id="Description" name="Description" placeholder="@("Dashboard.Products.Action.DescriptionPlaceholder".Localized())" rows="10">@Model.Description</textarea>
-                </div>
+            <div class="form-group">
+                <label>
+                    @("Dashboard.Products.Action.Description".Localized())
+                </label>
+                <textarea class="form-control" id="Description" name="Description" placeholder="@("Dashboard.Products.Action.DescriptionPlaceholder".Localized())" rows="10">@Model.Description</textarea>
+            </div>
+                
+            <div class="form-group">
+            <label>
+                Add Product Video
+            </label>
+            <input class="form-control" id="VideoLink" value="@Model.VideoLink" placeholder="Add Video Link" />
+        </div>
 
-                <div class="form-group">
-                    <label>
-                        @("Dashboard.Products.Action.ProductSpecifications".Localized())
-                    </label>
-                    <div class="input-group">
-                        <input id="SpecificationTitle" type="text" class="form-control" placeholder="@("Dashboard.Products.Action.SpecificationTitle".Localized())">
-                        <input id="SpecificationValue" type="text" class="form-control" placeholder="@("Dashboard.Products.Action.SpecificationValue".Localized())">
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" type="button" id="addSpecification">@("Dashboard.Products.Action.AddSpecification".Localized())</button>
-                        </div>
+            <div class="form-group">
+                <label>
+                    @("Dashboard.Products.Action.ProductSpecifications".Localized())
+                </label>
+                <div class="input-group">
+                    <input id="SpecificationTitle" type="text" class="form-control" placeholder="@("Dashboard.Products.Action.SpecificationTitle".Localized())">
+                    <input id="SpecificationValue" type="text" class="form-control" placeholder="@("Dashboard.Products.Action.SpecificationValue".Localized())">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" id="addSpecification">@("Dashboard.Products.Action.AddSpecification".Localized())</button>
                     </div>
                 </div>
-
-                <div class="form-group mb-0">
-                    <table class="table table-striped mb-0" id="specificationsTable">
-                        <thead>
-                            <tr>
-                                <th scope="col" width="45%">@("Dashboard.Products.Action.SpecificationTitle".Localized())</th>
-                                <th scope="col" width="45%">@("Dashboard.Products.Action.SpecificationValue".Localized())</th>
-                                <th scope="col" width="10%">@("Dashboard.Products.Action.SpecificationAction".Localized())</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @if (Model.ProductSpecifications != null && Model.ProductSpecifications.Count > 0)
-                            {
-                                foreach (var specicification in Model.ProductSpecifications)
-                                {
-                                    productSpecificationCount++;
-
-                                    var specName = string.Format("specification{0}", productSpecificationCount);
-
-                                    var specificationTitle = specicification.Value.GetSubstringText("", "~");
-                                    var specificationValue = specicification.Value.GetSubstringText("~", "");
-
-                                    <tr id="@specName" class="specificationRow">
-                                        <td class="title" scope="row">@specicification.Title</td>
-                                        <td class="value">@specicification.Value</td>
-                                        <td>
-                                            <input type="hidden" name="@specName" value="@string.Format("{0}~{1}", specicification.Title, specicification.Value)" />
-                                            <button class="btn btn-danger deleteSpecificationButton btn-sm" type="button" onclick="removeRow(this)">
-                                                @("Dashboard.Products.Action.SpecificationDelete".Localized())
-                                            </button>
-                                        </td>
-                                    </tr>
-                                }
-                            }
-
-                            <tr id="noSpecificationRow" style="@(Model.ProductSpecifications == null || Model.ProductSpecifications.Count == 0 ? string.Empty : "display:none")">
-                                <td scope="row" colspan="3">@("Dashboard.Products.Action.NoSpecifications".Localized())</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
             </div>
+
+            <div class="form-group mb-0">
+                <table class="table table-striped mb-0" id="specificationsTable">
+                    <thead>
+                        <tr>
+                            <th scope="col" width="45%">@("Dashboard.Products.Action.SpecificationTitle".Localized())</th>
+                            <th scope="col" width="45%">@("Dashboard.Products.Action.SpecificationValue".Localized())</th>
+                            <th scope="col" width="10%">@("Dashboard.Products.Action.SpecificationAction".Localized())</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.ProductSpecifications != null && Model.ProductSpecifications.Count > 0)
+                        {
+                            foreach (var specicification in Model.ProductSpecifications)
+                            {
+                                productSpecificationCount++;
+
+                                var specName = string.Format("specification{0}", productSpecificationCount);
+
+                                var specificationTitle = specicification.Value.GetSubstringText("", "~");
+                                var specificationValue = specicification.Value.GetSubstringText("~", "");
+
+                                <tr id="@specName" class="specificationRow">
+                                    <td class="title" scope="row">@specicification.Title</td>
+                                    <td class="value">@specicification.Value</td>
+                                    <td>
+                                        <input type="hidden" name="@specName" value="@string.Format("{0}~{1}", specicification.Title, specicification.Value)" />
+                                        <button class="btn btn-danger deleteSpecificationButton btn-sm" type="button" onclick="removeRow(this)">
+                                            @("Dashboard.Products.Action.SpecificationDelete".Localized())
+                                        </button>
+                                    </td>
+                                </tr>
+                            }
+                        }
+
+                        <tr id="noSpecificationRow" style="@(Model.ProductSpecifications == null || Model.ProductSpecifications.Count == 0 ? string.Empty : "display:none")">
+                            <td scope="row" colspan="3">@("Dashboard.Products.Action.NoSpecifications".Localized())</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
         </div>
         <div class="card mt-3">
             <div class="card-body">

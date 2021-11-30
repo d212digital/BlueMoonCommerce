@@ -14,6 +14,8 @@ namespace eCommerce.Entities
         public bool isFeatured { get; set; }
 
         public bool IsLead { get; set; }
+
+        public string VideoLink { get; set; }
         public string SanitizedName { get; set; }
 
         public int DisplaySeqNo { get; set; }
