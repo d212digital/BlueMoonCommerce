@@ -158,8 +158,7 @@ namespace eCommerce.Web
                         "~/content/js/dashboard.js"));
 
             //JavaScript/jQuery for Footer
-            bundles.Add(new ScriptBundle("~/bundles/dashboard/content/scripts/vendor").NonOrdering().Include(
-                        "~/content/lib/jquery-3.4.1/jquery.min.js",
+            bundles.Add(new ScriptBundle("~/bundles/dashboard/content/scripts/vendor").NonOrdering().Include(                        
                         "~/Content/templates/sbadmin2/js/demo/chart-area-demo.js",
                         "~/Content/templates/sbadmin2/js/demo/chart-pie-demo.js"
                         ));
