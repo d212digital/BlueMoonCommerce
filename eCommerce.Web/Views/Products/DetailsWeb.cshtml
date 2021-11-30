@@ -59,14 +59,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <div class="content">
-                            @*<h6>
-                                <a href="@Url.SearchWebProducts(category: Model.Product.Category.SanitizedName)">
-                                    <span>
-                                        @(currentLanguageCategoryRecord != null ? currentLanguageCategoryRecord.Name : string.Empty)
-                                    </span>
-                                </a>
-                            </h6>*@
+                        <div class="content">                           
                             <div class="pd-title">
 
                                 <h2>
@@ -206,8 +199,8 @@
                         @if (currentLanguageProductRecord != null && !string.IsNullOrEmpty(currentLanguageProductRecord.VideoLink))
                         {
                             <div class="tab-pane fade-in" id="video-tab" role="tabpanel">
-                                <div class="product-content ml-3 pt-3">
-                                    @Html.Raw(currentLanguageProductRecord.VideoLink)
+                                <div class="product-content ml-3 pt-3 mt-5 text-center">                               
+                                    @Html.Raw(currentLanguageProductRecord.VideoLink) 
                                 </div>
                             </div>
                         }

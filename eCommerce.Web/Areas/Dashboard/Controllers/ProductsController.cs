@@ -233,6 +233,7 @@ namespace eCommerce.Web.Areas.Dashboard.Controllers
 
                         isFeatured = model.isFeatured,
                         IsLead = model.IsLead,
+                        
                         ModifiedOn = DateTime.Now
                     };
 
