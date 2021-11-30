@@ -132,8 +132,9 @@ namespace eCommerce.Web
             #region Dashboard Bundles
             //Dashboard CSS Bundles
             bundles.Add(new StyleBundle("~/bundles/dashboard/content/css").NonOrdering().Include(
-                      "~/content/templates/sbadmin2/css/sb-admin-2.min.css", //this also has Bootstrap in it
                       "~/content/lib/jquery-ui-1.12.1/jquery-ui.min.css",
+                      "~/content/templates/sbadmin2/css/sb-admin-2.min.css",
+                      "~/content/templates/sbadmin2/css/sb-admin-2.css", //this also has Bootstrap in it
                       "~/content/css/dashboard.css"));
 
             //Dashboard CSS Bundles for RTL

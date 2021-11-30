@@ -1,4 +1,6 @@
-﻿<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="menuSidebar">
+﻿
+
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="menuSidebar">
     <li class="sidebar-brand d-flex align-items-center justify-content-center" href="@Url.Dashboard()">
         <div class="sidebar-brand-icon">
             <i class="fas fa-store"></i>
@@ -7,14 +9,17 @@
             @ConfigurationsHelper.ApplicationName.IfNullOrEmptyShowAlternative("Site")
         </div>
     </li>
-    <hr class="sidebar-divider">
+    <hr class="sidebar-divider" />
+
     <li class="nav-item @Html.MenuItemClass("Dashboard", "Index")">
         <a class="nav-link" href="@Url.Dashboard()">
             <i class="fas fa-tachometer-alt"></i>
             <span>@("Dashboard.Menu.Dashboard".Localized())</span>
         </a>
     </li>
-    <hr class="sidebar-divider">
+
+    <hr class="sidebar-divider" />
+
     <div class="sidebar-heading">
         Order Management
     </div>
@@ -27,7 +32,7 @@
     <li class="nav-item @Html.MenuItemClass("Users")">
         <a class="nav-link" href="@Url.ListAction("Users")">
             <i class="mr-1 fas fa-users"></i>
-            <span>@("Dashboard.Menu.Users.Customers".Localized())</span>
+            <span>Customers</span>
         </a>
     </li>
     <li class="nav-item @Html.MenuItemClass("Comments")">
@@ -36,7 +41,7 @@
             <span>@("Dashboard.Menu.Comments".Localized())</span>
         </a>
     </li>
-    <hr class="sidebar-divider">
+    <hr class="sidebar-divider" />
     <!-- Heading -->
     <div class="sidebar-heading">
         Product Management
@@ -72,6 +77,7 @@
     </li>
 
     <hr class="sidebar-divider">
+
     <div class="sidebar-heading">
         Admin
     </div>
