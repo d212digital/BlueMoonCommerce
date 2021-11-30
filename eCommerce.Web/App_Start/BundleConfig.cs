@@ -153,10 +153,15 @@ namespace eCommerce.Web
                         "~/content/lib/popperjs-1.16.0/popper.js",
                         "~/content/lib/bootstrap-4.4.1/js/bootstrap.min.js",
                         "~/content/lib/ms-dropdown-3.5.2/jquery.dd.min.js",
-                        "~/Content/lib/darkreader-4.9.16/darkreader.min.js",
-                        "~/Content/templates/sbadmin2/js/demo/chart-area-demo.js",
-                        "~/Content/templates/sbadmin2/js/demo/chart-pie-demo.js",
+                        "~/Content/lib/darkreader-4.9.16/darkreader.min.js",                       
                         "~/content/js/dashboard.js"));
+
+            //JavaScript/jQuery for Footer
+            bundles.Add(new ScriptBundle("~/bundles/dashboard/content/scripts/vendor").NonOrdering().Include(
+                        "~/content/lib/jquery-3.4.1/jquery.min.js",
+                        "~/Content/templates/sbadmin2/js/demo/chart-area-demo.js",
+                        "~/Content/templates/sbadmin2/js/demo/chart-pie-demo.js"
+                        ));
             #endregion
         }
     }
