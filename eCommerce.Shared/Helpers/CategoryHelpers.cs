@@ -61,7 +61,7 @@ namespace eCommerce.Shared.Helpers
         {
             return parentCategoryID.HasValue ? allCategories.FirstOrDefault(x => x.ID == parentCategoryID) : null;
         }
-
+        
         public static List<Category> GetAllCategoryChildrens(Category category, List<Category> allCategories)
         {
             if (category != null && allCategories != null && allCategories.Count > 0)
