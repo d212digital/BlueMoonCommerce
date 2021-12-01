@@ -2,58 +2,58 @@
 
 @if (Model != null && Model.Users != null && Model.Users.Count > 0)
 {
-    <table class="table table-hover table-responsive-sm m-0">
-        <thead class="thead-light">
+<table class="table table-hover table-responsive-sm" id="dataTableProducts">
+    <thead>
+        <tr>
+            <th>
+                @("Dashboard.Users.List.RegisteredOn".Localized())
+            </th>
+            <th>
+                @("Dashboard.Users.List.Name".Localized())
+            </th>
+            <th>
+                @("Dashboard.Users.List.Username".Localized())
+            </th>
+            <th>
+                @("Dashboard.Users.List.Email".Localized())
+            </th>
+            <th>
+                @("Dashboard.Users.List.Roles".Localized())
+            </th>
+            <th>
+                @("Dashboard.Users.List.Actions".Localized())
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model.Users)
+        {
             <tr>
-                <th>
-                    @("Dashboard.Users.List.RegisteredOn".Localized())
-                </th>
-                <th>
-                    @("Dashboard.Users.List.Name".Localized())
-                </th>
-                <th>
-                    @("Dashboard.Users.List.Username".Localized())
-                </th>
-                <th>
-                    @("Dashboard.Users.List.Email".Localized())
-                </th>
-                <th>
-                    @("Dashboard.Users.List.Roles".Localized())
-                </th>
-                <th>
-                    @("Dashboard.Users.List.Actions".Localized())
-                </th>
+                <td>
+                    @user.RegisteredOn.ToString().IfNullOrEmptyShowAlternative("-")
+                </td>
+                <td>
+                    @user.FullName
+                </td>
+                <td>
+                    @user.UserName
+                </td>
+                <td>
+                    @user.Email
+                </td>
+                <td>
+                    @user.Roles.Count
+                </td>
+                <td>
+                    <a href="@Url.UserDetails(user.Id)" class="moreButton btn btn-primary">
+                        <i class="fas fa-user mr-1"></i>
+                        @("Dashboard.Users.List.MoreDetails".Localized())
+                    </a>
+                </td>
             </tr>
-        </thead>
-        <tbody>
-            @foreach (var user in Model.Users)
-            {
-                <tr>
-                    <td>
-                        @user.RegisteredOn.ToString().IfNullOrEmptyShowAlternative("-")
-                    </td>
-                    <td>
-                        @user.FullName
-                    </td>
-                    <td>
-                        @user.UserName
-                    </td>
-                    <td>
-                        @user.Email
-                    </td>
-                    <td>
-                        @user.Roles.Count
-                    </td>
-                    <td>
-                        <a href="@Url.UserDetails(user.Id)" class="moreButton btn btn-primary">
-                            <i class="fas fa-user mr-1"></i>
-                            @("Dashboard.Users.List.MoreDetails".Localized())
-                        </a>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+        }
+    </tbody>
+</table>
 
     if (Model.Pager != null && Model.Pager.TotalPages > 1)
     {

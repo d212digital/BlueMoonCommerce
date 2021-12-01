@@ -4,85 +4,91 @@
 
 @if (Model != null && Model.Orders != null && Model.Orders.Count > 0)
 {
-    <table class="table table-hover table-responsive-sm m-0">
-        <thead class="thead-light">
-            <tr>
-                <th>
-                    @("Dashboard.Orders.List.OrderID".Localized())
-                </th>
-                <th>
-                    @("Dashboard.Orders.List.PlacedOn".Localized())
-                </th>
-                <th>
-                    @("Dashboard.Orders.List.OrderAmount".Localized())
-                </th>
-                <th>
-                    @("Dashboard.Orders.List.PaymentMethod".Localized())
-                </th>
-                <th>
-                    @("Dashboard.Orders.List.Status".Localized())
-                </th>
-                <th>
-                    @("Dashboard.Orders.List.Actions".Localized())
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var order in Model.Orders)
-            {
-                var orderCurrentHistory = order.OrderHistory.OrderByDescending(x => x.ModifiedOn).FirstOrDefault();
+<table class="table table-hover table-responsive-sm" id="dataTableOrders">
+    <thead>
+        <tr>
+            <th>
+                @("Dashboard.Orders.List.OrderID".Localized())
+            </th>
+            <th>
+                Customer Name
+            </th>
+            <th>
+                @("Dashboard.Orders.List.OrderAmount".Localized())
+            </th>
+            <th>
+                @("Dashboard.Orders.List.PaymentMethod".Localized())
+            </th>
+            <th>
+               Order Date
+            </th>
+            <th>
+                @("Dashboard.Orders.List.Status".Localized())
+            </th>
+            <th>
+                @("Dashboard.Orders.List.Actions".Localized())
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var order in Model.Orders)
+        {
+            var orderCurrentHistory = order.OrderHistory.OrderByDescending(x => x.ModifiedOn).FirstOrDefault();
 
-                <tr>
-                    <td>
-                        @order.ID
-                    </td>
-                    <td>
-                        @order.PlacedOn
-                    </td>
-                    <td>
-                        @order.FinalAmmount
-                    </td>
-                    <td>
-                        @(("Dashboard.OrderDetails.PaymentMethods." + ((PaymentMethods)order.PaymentMethod).ToString()).Localized())
-                    </td>
-                    @if (orderCurrentHistory != null)
-                    {
-                        <td class="@Html.getCellBackgroundClassByOrderStatus((OrderStatus)orderCurrentHistory.OrderStatus)">
-                            <span>
-                                @(("Dashboard.Orders.OrderStatus." + ((OrderStatus)orderCurrentHistory.OrderStatus).ToString()).Localized())
-                            </span>
-                            <br />
-                            <div class="small">
-                                @("Dashboard.Orders.List.UpdatedOn".Localized()): @orderCurrentHistory.ModifiedOn
-                            </div>
-                        </td>
-                    }
-                    else
-                    {
-                        <td>
-                            <span>-</span>
-                        </td>
-                    }
-                    <td>
-                        <div class="btn-group" role="group">
-                            <a class="btn btn-primary mx-1" href="@Url.DetailsAction("Orders", order.ID)">
-                                <i class="fas fa-shopping-cart mr-1"></i>
-                                @("Dashboard.Orders.List.Details".Localized())
-                            </a>
-                            <a class="btn btn-warning mx-1" href="@Url.OrderTrack(order.ID.ToString())" target="_blank">
-                                <i class="fas fa-search-location mr-1"></i>
-                                @("Dashboard.Orders.List.Track".Localized())
-                            </a>
-                            <a class="btn btn-success mx-1" href="@Url.PrintInvoice(order.ID)" target="_blank">
-                                <i class="fas fa-print mr-1"></i>
-                                @("Dashboard.Orders.List.Invoice".Localized())
-                            </a>
-                        </div>
-                    </td>
-                </tr>
+        <tr>
+            <td>
+                @order.ID
+            </td>
+            <td>
+                @order.CustomerName
+            </td>
+            <td>
+                @order.FinalAmmount
+            </td>
+            <td>
+                @(("Dashboard.OrderDetails.PaymentMethods." + ((PaymentMethods)order.PaymentMethod).ToString()).Localized())
+            </td>
+            <td>
+                @order.PlacedOn
+            </td>
+            @if (orderCurrentHistory != null)
+            {
+                <td class="@Html.getCellBackgroundClassByOrderStatus((OrderStatus)orderCurrentHistory.OrderStatus)">
+                    <span>
+                        @(("Dashboard.Orders.OrderStatus." + ((OrderStatus)orderCurrentHistory.OrderStatus).ToString()).Localized())
+                    </span>
+                    <br />
+                    <div class="small">
+                        @("Dashboard.Orders.List.UpdatedOn".Localized()): @orderCurrentHistory.ModifiedOn
+                    </div>
+                </td>
             }
-        </tbody>
-    </table>
+            else
+            {
+                <td>
+                    <span>-</span>
+                </td>
+            }
+            <td>
+                <div class="btn-group" role="group">
+                    <a class="btn btn-primary rounded mx-1" href="@Url.DetailsAction("Orders", order.ID)">
+                        <i class="fas fa-shopping-cart mr-1"></i>
+                        @("Dashboard.Orders.List.Details".Localized())
+                    </a>
+                    <a class="btn btn-warning rounded mx-1" href="@Url.OrderTrack(order.ID.ToString())" target="_blank">
+                        <i class="fas fa-search-location mr-1"></i>
+                        @("Dashboard.Orders.List.Track".Localized())
+                    </a>
+                    <a class="btn btn-success rounded mx-1" href="@Url.PrintInvoice(order.ID)" target="_blank">
+                        <i class="fas fa-print mr-1"></i>
+                        @("Dashboard.Orders.List.Invoice".Localized())
+                    </a>
+                </div>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
 
     if (Model.Pager != null && Model.Pager.TotalPages > 1)
     {

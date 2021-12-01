@@ -41,18 +41,20 @@
             </div>
         </form>
     </div>
-    <div class="card-body p-0" id="list-holder">
-        @{Html.RenderPartial("_Listing", Model);}
-    </div>
-</div>
-
-<div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content" id="contentArea">
+    <div class="card-body">
+        <div class="table-responsive">
+            @*<div class="card-body p-0" id="list-holder">*@
+                @{Html.RenderPartial("_Listing", Model);}
+            </div>
         </div>
     </div>
-</div>
+        <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content" id="contentArea">
+                </div>
+            </div>
+        </div>
 
-<div id="sliderTemplate" style="display:none">
-    @Html.Picture(new Picture(), "image img-thumbnail", "width: 100%", "Home Slider")
-</div>
+        <div id="sliderTemplate" style="display:none">
+            @Html.Picture(new Picture(), "image img-thumbnail", "width: 100%", "Home Slider")
+        </div>
