@@ -1,4 +1,4 @@
-﻿@*@if (AppDataHelper.IsRTL)
+﻿@if (AppDataHelper.IsRTL)
 {
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
 
@@ -13,7 +13,16 @@ else
     @Styles.Render("~/bundles/dashboard/content/css")
     @Scripts.Render("~/bundles/dashboard/content/scripts")
 
+    <!-- Bootstrap core JavaScript-->
    
+    <script src="~/Content/templates/sbadmin2/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="~/Content/templates/sbadmin2/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="~/Content/templates/sbadmin2/js/sb-admin-2.min.js"></script>
 
 
-}*@
+
+}
