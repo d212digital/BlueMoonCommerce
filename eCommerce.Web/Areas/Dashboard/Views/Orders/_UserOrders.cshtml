@@ -5,8 +5,8 @@
     <div class="col-md-12">
         <form id="searchUserOrdersForm" method="post">
             <div class="input-group mb-3">
-                <input name="orderid" type="text" value="@Model.OrderID" class="form-control" placeholder="@("Dashboard.UserDetails.Orders.SearchByOrderIDPlaceholder".Localized())">
-                <select class="form-control custom-select" name="orderStatus">
+                <input name="orderid" type="text" value="@Model.OrderID" class="form-control rounded mr-1" placeholder="@("Dashboard.UserDetails.Orders.SearchByOrderIDPlaceholder".Localized())">
+                <select class="form-control custom-select rounded" name="orderStatus">
                     <option value="0">@("Dashboard.UserDetails.Orders.SelectByOrderStatus".Localized())</option>
                     @foreach (var orderStatus in Enum.GetValues(typeof(OrderStatus)).Cast<OrderStatus>())
                     {
@@ -15,8 +15,8 @@
                         <option value="@((int)orderStatus)" @selected>@(("Dashboard.UserDetails.Orders.OrderStatus." + (orderStatus.ToString()).ToString()).Localized())</option>
                     }
                 </select>
-                <button type="button" id="searchUserOrdersButton" class="form-control btn btn-primary"><i class="fas fa-search"></i> @("Dashboard.UserDetails.Orders.Search".Localized())</button>
-                <a data-href="@Url.UserOrdersList(Model.UserID)" role="button" class="datalink text-white form-control btn btn-primary"><i class="fas fa-redo-alt"></i> @("Dashboard.UserDetails.Orders.Reset".Localized())</a>
+                <button type="button" id="searchUserOrdersButton" class="form-control btn btn-primary rounded mr-1"><i class="fas fa-search"></i> @("Dashboard.UserDetails.Orders.Search".Localized())</button>
+                <a data-href="@Url.UserOrdersList(Model.UserID)" role="button" class="datalink text-white form-control btn btn-danger rounded"><i class="fas fa-redo-alt"></i> @("Dashboard.UserDetails.Orders.Reset".Localized())</a>
             </div>
         </form>
     </div>
