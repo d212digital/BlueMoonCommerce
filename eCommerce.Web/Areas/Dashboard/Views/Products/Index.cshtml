@@ -13,9 +13,9 @@
     <h3 class="h3 mb-2 text-gray-800">
         @Model.PageTitle
     </h3>
-    <p>
+    @*<p>
         @Model.PageDescription
-    </p>
+    </p>*@
     <hr />
 </div>
 
@@ -24,7 +24,7 @@
             <form action="@Url.ListAction("Products")">
                 <div class="input-group">
                     @* <input name="searchterm" type="text" value="@Model.SearchTerm" class="form-control" placeholder="@("Dashboard.Products.SearchPlaceholder".Localized())">*@
-                    <select class="form-control custom-select" name="categoryid">
+                    <select class="form-control custom-select rounded" name="categoryid">
                         <option value="">@("Dashboard.Products.SelectByCategory".Localized())</option>
                         @foreach (var category in Model.Categories)
                         {
