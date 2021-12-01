@@ -2,8 +2,8 @@
 
 @if (Model.NewsletterSubscribers != null && Model.NewsletterSubscribers.Count > 0)
 {
-    <table class="table table-hover table-responsive-sm m-0">
-        <thead class="thead-light">
+    <table class="table table-hover table-responsive-sm mb-4" id="dataTableProducts">
+        <thead>
             <tr>
                 <th width="50%">
                     @("Dashboard.NewsletterSubscribers.List.Email".Localized())

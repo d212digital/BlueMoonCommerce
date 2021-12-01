@@ -15,9 +15,9 @@
     <h3 class="h3 mb-2 text-gray-800">
         @Model.PageTitle
     </h3>
-    <p>
+    @*<p>
         @Model.PageDescription
-    </p>
+    </p>*@
     <hr />
 </div>
 
@@ -25,9 +25,9 @@
     <div class="card-header">
         <form action="@Url.ListAction("Orders")">
             <div class="input-group">
-                <input name="UserID" type="text" value="@Model.UserID" class="form-control" placeholder="@("Dashboard.Orders.SearchByUserIDPlaceholder".Localized())">
-                <input name="orderid" type="text" value="@Model.OrderID" class="form-control" placeholder="@("Dashboard.Orders.SearchByOrderIDPlaceholder".Localized())">
-                <select class="form-control custom-select" name="orderStatus">
+                <input name="UserID" type="text" value="@Model.UserID" class="form-control rounded mr-1" placeholder="@("Dashboard.Orders.SearchByUserIDPlaceholder".Localized())">
+                <input name="orderid" type="text" value="@Model.OrderID" class="form-control rounded mr-1" placeholder="@("Dashboard.Orders.SearchByOrderIDPlaceholder".Localized())">
+                <select class="form-control custom-select rounded" name="orderStatus">
                     <option value="">@("Dashboard.Orders.SearchByOrderStatus".Localized())</option>
                     @foreach (var orderStatus in Enum.GetValues(typeof(OrderStatus)).Cast<OrderStatus>())
                     {
