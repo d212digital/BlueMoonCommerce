@@ -24,4 +24,9 @@ $(document).ready(function () {
         "bPaginate": false
     });
 });
-
+$(document).ready(function () {
+    $('#dataTableConfigurations').dataTable({
+        "bInfo": false,
+        "bPaginate": false
+    });
+});

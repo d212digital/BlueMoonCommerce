@@ -2,76 +2,76 @@
 
 @if (Model.Configurations != null && Model.Configurations.Count > 0)
 {
-    <table class="table table-hover table-responsive-sm m-0">
-        <thead class="thead-light">
+<table class="table table-hover table-responsive-sm mb-4" id="dataTableConfigurations">
+    <thead>
+        <tr>
+            <th width="40%">
+                @("Dashboard.Configurations.List.Key".Localized())
+            </th>
+            <th width="30%">
+                @("Dashboard.Configurations.List.Value".Localized())
+            </th>
+            <th width="15%">
+                @("Dashboard.Configurations.List.ConfigurationType".Localized())
+            </th>
+            <th width="15%">
+                @("Dashboard.Configurations.List.Actions".Localized())
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var configuration in Model.Configurations)
+        {
             <tr>
-                <th width="40%">
-                    @("Dashboard.Configurations.List.Key".Localized())
-                </th>
-                <th width="30%">
-                    @("Dashboard.Configurations.List.Value".Localized())
-                </th>
-                <th width="15%">
-                    @("Dashboard.Configurations.List.ConfigurationType".Localized())
-                </th>
-                <th width="15%">
-                    @("Dashboard.Configurations.List.Actions".Localized())
-                </th>
+                <td>
+                    @configuration.Key.MakeWord()
+                    <br />
+                    <div class="small">@configuration.Description</div>
+                </td>
+                <td>
+                    @if (false && configuration.ConfigurationType == (int)ConfigurationTypes.Sliders)
+                    {
+                        var topHeading = configuration.Value.GetSubstringText("#TH#", "#MH#");
+                        var mainHeading = configuration.Value.GetSubstringText("#MH#", "#PG#");
+                        var paragraph = configuration.Value.GetSubstringText("#PG#", "");
+
+                        if (!string.IsNullOrEmpty(topHeading))
+                        {
+                            topHeading = topHeading.Replace("TH#", "");
+                        }
+                        if (!string.IsNullOrEmpty(mainHeading))
+                        {
+                            mainHeading = mainHeading.Replace("MH#", "");
+                        }
+                        if (!string.IsNullOrEmpty(paragraph))
+                        {
+                            paragraph = paragraph.Replace("PG#", "");
+                        }
+
+                        <h5>@topHeading</h5>
+                        <h4>@mainHeading</h4>
+                        <p>@paragraph</p>
+                    }
+                    else
+                    {
+                        <span>
+                            @configuration.Value.SafeSubstring(20, "...")
+                        </span>
+                    }
+                </td>
+                <td>
+                    @(("Dashboard.Configurations.ConfigurationTypes." + ((ConfigurationTypes)configuration.ConfigurationType).ToString()).Localized())
+                </td>
+                <td>
+                    <button class="editButton btn btn-primary" data-id="@configuration.Key">
+                        <i class="fas fa-edit"></i>
+                        @("Dashboard.Configurations.List.Edit".Localized())
+                    </button>
+                </td>
             </tr>
-        </thead>
-        <tbody>
-            @foreach (var configuration in Model.Configurations)
-            {
-                <tr>
-                    <td>
-                        @configuration.Key.MakeWord()
-                        <br />
-                        <div class="small">@configuration.Description</div>
-                    </td>
-                    <td>
-                        @if (false && configuration.ConfigurationType == (int)ConfigurationTypes.Sliders)
-                        {
-                            var topHeading = configuration.Value.GetSubstringText("#TH#", "#MH#");
-                            var mainHeading = configuration.Value.GetSubstringText("#MH#", "#PG#");
-                            var paragraph = configuration.Value.GetSubstringText("#PG#", "");
-
-                            if (!string.IsNullOrEmpty(topHeading))
-                            {
-                                topHeading = topHeading.Replace("TH#", "");
-                            }
-                            if (!string.IsNullOrEmpty(mainHeading))
-                            {
-                                mainHeading = mainHeading.Replace("MH#", "");
-                            }
-                            if (!string.IsNullOrEmpty(paragraph))
-                            {
-                                paragraph = paragraph.Replace("PG#", "");
-                            }
-
-                            <h5>@topHeading</h5>
-                            <h4>@mainHeading</h4>
-                            <p>@paragraph</p>
-                        }
-                        else
-                        {
-                            <span>
-                                @configuration.Value.SafeSubstring(20, "...")
-                            </span>
-                        }
-                    </td>
-                    <td>
-                        @(("Dashboard.Configurations.ConfigurationTypes." + ((ConfigurationTypes)configuration.ConfigurationType).ToString()).Localized())
-                    </td>
-                    <td>
-                        <button class="editButton btn btn-primary" data-id="@configuration.Key">
-                            <i class="fas fa-edit"></i>
-                            @("Dashboard.Configurations.List.Edit".Localized())
-                        </button>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+        }
+    </tbody>
+</table>
 
     if (Model.Pager != null && Model.Pager.TotalPages > 1)
     {

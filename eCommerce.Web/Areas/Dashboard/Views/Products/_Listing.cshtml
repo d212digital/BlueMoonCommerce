@@ -12,9 +12,9 @@
                 <th>
                     @("Dashboard.Products.List.Category".Localized())
                 </th>
-                <th>
+                @*<th>
                     @("Dashboard.Products.List.Summary".Localized())
-                </th>
+                </th>*@
                 <th>
                     @("Dashboard.Products.List.Price".Localized())
                 </th>
@@ -72,9 +72,9 @@
                             }
                         }
                     </td>
-                    <td>
+                    @*<td>
                         @(currentLanguageProductRecord != null ? currentLanguageProductRecord.Summary.IfNullOrEmptyShowAlternative("-") : string.Empty)
-                    </td>
+                    </td>*@
                     <td>
                         @product.Price.WithCurrency()
                     </td>
