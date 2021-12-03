@@ -10,11 +10,11 @@
         <div class="form-row mb-3">
             <div class="col">
                 <label>@("PP.Checkout.Email".LocalizedString())</label>
-                <input name="Email" type="email" class="form-control" value="@Model.User.Email" required placeholder="contact@email.com">
+                <input name="Email" type="email" class="form-control" value="@Model.User.Email" required placeholder="Enter email">
             </div>
             <div class="col">
                 <label>@("PP.Checkout.PhoneNumber".LocalizedString())</label>
-                <input name="PhoneNumber" type="tel" class="form-control ltr-dir @(AppDataHelper.IsRTL ? "text-left" : string.Empty)" value="@Model.User.PhoneNumber" placeholder="+12 34567890">
+                <input name="PhoneNumber" type="tel" class="form-control ltr-dir @(AppDataHelper.IsRTL ? "text-left" : string.Empty)" value="@Model.User.PhoneNumber" placeholder="Enter tel:">
             </div>
         </div>
         @if (!User.Identity.IsAuthenticated)
