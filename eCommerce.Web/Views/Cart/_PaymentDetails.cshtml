@@ -98,12 +98,12 @@
                         </div>
                         <hr>
                         <div class="form-group row">
-                            <label class="col-md-12">
-                                <div class="small">
+                           
+                                <label class="col-md-12 small">
                                     <i class="fas fa-info-circle mr-1"></i>
                                     @("PP.Checkout.CardInfoNotSaved".LocalizedString())
-                                </div>
-                            </label>
+                                </label>
+                            
                         </div>
                         <div class="form-group row mb-0">
                             <div class="col-md-12">
@@ -144,7 +144,7 @@
     {
         //change this currency symbol based on your store currency. Please check with PayPal supported currency symbols.
         //here is the list of PayPal supported currencies = https://developer.paypal.com/docs/api/reference/currency-codes/
-        var paypalCurrencySymbol = "USD";
+        var paypalCurrencySymbol = "GBP";
 
         //model.final amount is the amount that is calculated from product prices and shipping charges etc. This is not converted to any currency.
         // if you are using any currency other than USD and paypal doesn't support it, you should convert this amount to USD below.
@@ -197,19 +197,22 @@
             }
         </script>
 
-        <script data-src="@string.Format("https://www.paypal.com/sdk/js?client-id={0}", ConfigurationsHelper.PayPalClientID)" onload="paypalLoaded()" paypal-script></script>
+        <script data-src="@string.Format("https://www.paypal.com/sdk/js?client-id={0}&currency=GBP", ConfigurationsHelper.PayPalClientID)" onload="paypalLoaded()" paypal-script></script>
         <div class="card">
             <div class="card-header">
                 <h2 class="mb-0">
                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#paypalContainer" aria-expanded="false">
-                        @("PP.Checkout.PayViaPayPal".Localized())
+                        @* @("PP.Checkout.PayViaPayPal".Localized())*@
+                        <img src="~/Content/images/site/ecommerce-payment-methods.png" />
                     </button>
-                    <i class="fab fa-paypal text-primary"></i>
+                    @*<i class="fab fa-paypal text-primary"></i>*@
+                    
+                    <i class="fas fa-credit-card text-success ml-0"></i>
                 </h2>
             </div>
-            <div id="paypalContainer" class="collapse" data-parent="#paymentOptions" style="">
-                <div class="card-body">
-                    <div class="paypal-payment-info alert alert-success" role="alert">
+            <div id="paypalContainer" class="open" data-parent="#paymentOptions" style="">
+                <div class="card-body mr-1 text-center">
+                    <div class="alert alert-success ml-3 mr-3" role="alert">
                         @("PP.Checkout.PayPalAmountNote".LocalizedString().Replace("{amount}", paypalAmount).Replace("{currency}", paypalCurrencySymbol))                        
                     </div>
                     <div id="paypalHolder"></div>

@@ -2952,8 +2952,8 @@ ol {
 					width: 21%;
 					height: 150px;
 					padding: 10px;
-					background: #efefef;
-					border-bottom: 1px solid #fff;
+					/*background: #efefef;
+					border-bottom: 1px solid #fff;*/
 				}
 
 					.cart-table table tr td.cart-pic img {
