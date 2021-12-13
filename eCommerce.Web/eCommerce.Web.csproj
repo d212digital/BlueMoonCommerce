@@ -4998,6 +4998,9 @@
     <Content Include="Views\Categories\_ProductsByFeaturedCategories.Mobile.cshtml" />
     <Content Include="Views\Shared\_NewsLetterWidget.cshtml" />
     <Content Include="Views\Categories\_CategoriesMenuForMobile.cshtml" />
+    <Content Include="Views\Shared\_LayoutCheckout.cshtml" />
+    <Content Include="Views\Shared\_HeaderCheckout.cshtml" />
+    <Content Include="Views\Shared\_FooterCheckout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
