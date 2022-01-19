@@ -240,6 +240,13 @@ namespace eCommerce.Shared.Helpers
                 return (GetConfigValue<decimal>("FlatDeliveryCharges"));
             }
         }
+        public static decimal VatRate
+        {
+            get
+            {
+                return (GetConfigValue<decimal>("VatRate"));
+            }
+        }
         public static int DigitsAfterDecimalPoint
         {
             get
