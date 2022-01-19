@@ -11,16 +11,16 @@
                     @("PP.UserProfile.UserOrders.OrderID".Localized())
                 </th>
                 <th>
-                    @("PP.UserProfile.UserOrders.PlacedOnDate".Localized())
+                    Date Ordered
                 </th>
                 <th>
                     @("PP.UserProfile.UserOrders.OrderAmount".Localized())
                 </th>
                 <th>
-                    @("PP.UserProfile.UserOrders.Status".Localized())
+                  Current @("PP.UserProfile.UserOrders.Status".Localized())
                 </th>
                 <th>
-                    @("PP.UserProfile.UserOrders.Actions".Localized())
+                  Order @("PP.UserProfile.UserOrders.Actions".Localized())
                 </th>
             </tr>
         </thead>
@@ -43,7 +43,7 @@
                     {
                         <td class="@Html.getCellBackgroundClassByOrderStatus((OrderStatus)orderCurrentHistory.OrderStatus)">
                             <span>
-                                @(string.Format("PP.UserProfile.UserOrders.OrderStatus." + ((OrderStatus)orderCurrentHistory.OrderStatus).ToString()).Localized())
+                              Order @(string.Format("PP.UserProfile.UserOrders.OrderStatus." + ((OrderStatus)orderCurrentHistory.OrderStatus).ToString()).Localized())
                             </span>
                             <br />
                             <div class="small">
@@ -57,11 +57,11 @@
                             <span>-</span>
                         </td>
                     }
-                    <td>
+                    <td width="17%" class="align-content-center">
                         <div class="btn-group" role="group">
-                            <a class="btn btn-warning" href="@Url.OrderTrack(order.ID.ToString())" target="_blank">
-                                <i class="fas fa-search-location mr-1"></i>
-                                @("PP.UserProfile.UserOrders.Track".Localized())
+                            <a class="btn btn-success ml-3" href="@Url.OrderTrack(order.ID.ToString())" target="_self">
+                                <i class="fas fa-search-location"></i>
+                                @("PP.UserProfile.UserOrders.Track".Localized()) Order
                             </a>
                         </div>
                     </td>
