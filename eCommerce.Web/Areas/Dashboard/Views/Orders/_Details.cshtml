@@ -7,6 +7,7 @@
     var i = 0;
     var orderStatus = Model.Order.OrderHistory.OrderByDescending(x => x.ModifiedOn).FirstOrDefault();
 
+
     <div class="card">
         <ul class="list-group list-group-flush">
             <li class="list-group-item bg-light lead">
@@ -118,6 +119,7 @@
                         @foreach (var orderItem in Model.Order.OrderItems)
                         {
                             var currentLanguageProductRecord = orderItem.Product.ProductRecords.FirstOrDefault(x => x.LanguageID == AppDataHelper.CurrentLanguage.ID);
+                            var csubTotalAmount = orderItem.ItemPrice * orderItem.Quantity * ConfigurationsHelper.VatRate;
 
                             i++;
 
@@ -177,19 +179,38 @@
                                 </span>
                             </td>
                         </tr>
-                        <tr>
-                            <td colspan="4" class="text-right">
-                                <strong>@("Dashboard.OrderDetails.Total".Localized())</strong>
-                            </td>
-                            <td colspan="1">
-                                <span>
-                                    @Model.Order.FinalAmmount.WithCurrency()
-                                </span>
-                            </td>
-                        </tr>
-                    </tfoot>
+                        @foreach (var orderItem in Model.Order.OrderItems)
+                        {
+
+                            var subTotalAmount = orderItem.ItemPrice * orderItem.Quantity * ConfigurationsHelper.VatRate;
+
+                            i++;
+                            <tr>
+                                <td colspan="4" class="text-right">
+                                    <strong>Total VAT</strong>
+                                </td>
+                                <td colspan="1">
+                                    <span>
+                                        @subTotalAmount.WithCurrency()
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                         
+                                <td colspan="4" class="text-right">
+                                    <strong>@("Dashboard.OrderDetails.Total".Localized())</strong>
+                                </td>
+                                <td colspan="1">
+                                    <span>
+                                        @Model.Order.FinalAmmount.WithCurrency()
+                                    </span>
+                                </td>
+                            </tr>
+                        }
+                        </tfoot>
                 </table>
-            </li>
+            </li> 
+           
             <li class="list-group-item bg-light lead">@("Dashboard.OrderDetails.CustomerDetails".Localized())</li>
             <li class="list-group-item">
                 <form>
