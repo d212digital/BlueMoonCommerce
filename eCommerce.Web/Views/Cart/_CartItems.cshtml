@@ -9,6 +9,8 @@
 
     var subTotalAmount = Model.CartItems.Sum(z => z.ProductTotal);
     var discount = 0M;
+    var vatTotalAmount = Math.Round(subTotalAmount * ConfigurationsHelper.VatRate);
+    var subTotalLessVat = Math.Round(subTotalAmount - vatTotalAmount);
 
     if (!string.IsNullOrEmpty(Model.PromoCode))
     {
@@ -45,7 +47,6 @@
     }
 
     var totalAmount = subTotalAmount - discount + ConfigurationsHelper.FlatDeliveryCharges;
-    
     var IslazyLoadImage = !Request.IsAjaxRequest();
 
     <form class="cart-form">
@@ -137,9 +138,9 @@
                 <div class="proceed-checkout">
                     <ul>
                         <li class="subtotal">
-                            @("PP.Cart.SubTotal".LocalizedString())
+                            @("PP.Cart.SubTotal".LocalizedString()) (excl VAT)
                             <span class="ltr-dir">
-                                @subTotalAmount.WithCurrency()
+                                @subTotalLessVat.WithCurrency()
                             </span>
                         </li>
                         <li class="subtotal">
@@ -152,6 +153,12 @@
                             @("PP.Cart.ShippingCharges".LocalizedString())
                             <span class="ltr-dir">
                                 @ConfigurationsHelper.FlatDeliveryCharges.WithCurrency()
+                            </span>
+                        </li>
+                        <li class="subtotal">
+                            VAT Total
+                            <span class="ltr-dir">
+                                @vatTotalAmount.WithCurrency()
                             </span>
                         </li>
                         <li class="cart-total">
