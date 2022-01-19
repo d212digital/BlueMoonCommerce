@@ -6,7 +6,7 @@
 {
     var i = 0;
     var orderStatus = Model.Order.OrderHistory.OrderByDescending(x => x.ModifiedOn).FirstOrDefault();
-
+   
 
     <div class="card">
         <ul class="list-group list-group-flush">
@@ -119,8 +119,7 @@
                         @foreach (var orderItem in Model.Order.OrderItems)
                         {
                             var currentLanguageProductRecord = orderItem.Product.ProductRecords.FirstOrDefault(x => x.LanguageID == AppDataHelper.CurrentLanguage.ID);
-                            var csubTotalAmount = orderItem.ItemPrice * orderItem.Quantity * ConfigurationsHelper.VatRate;
-
+                      
                             i++;
 
                             <tr>
@@ -145,7 +144,7 @@
                     <tfoot>
                         <tr>
                             <td colspan="4" class="text-right">
-                                <strong>@("Dashboard.OrderDetails.TotalAmount".Localized())</strong>
+                                <strong>@("Dashboard.OrderDetails.TotalAmount".Localized()) (Incl Vat)</strong>
                             </td>
                             <td colspan="1">
                                 <span>
@@ -179,35 +178,46 @@
                                 </span>
                             </td>
                         </tr>
-                        @foreach (var orderItem in Model.Order.OrderItems)
+                        @if (Model.Order.TotalAmmount > 0)
                         {
-
-                            var subTotalAmount = orderItem.ItemPrice * orderItem.Quantity * ConfigurationsHelper.VatRate;
-
-                            i++;
+                            var subTotalAmount = Model.Order.TotalAmmount;
+                            var vatTotalAmount = Math.Round(subTotalAmount * ConfigurationsHelper.VatRate);
+                            var subTotalLessVat = Math.Round(subTotalAmount - vatTotalAmount);
+                            <tr>
+                                <td colspan="4" class="text-right">
+                                    <strong>SubTotal (Excl Vat)</strong>
+                                </td>
+                                <td colspan="1">
+                                    <span>
+                                        @subTotalLessVat.WithCurrency()
+                                    </span>
+                                </td>
+                            </tr>
                             <tr>
                                 <td colspan="4" class="text-right">
                                     <strong>Total VAT</strong>
                                 </td>
                                 <td colspan="1">
                                     <span>
-                                        @subTotalAmount.WithCurrency()
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                         
-                                <td colspan="4" class="text-right">
-                                    <strong>@("Dashboard.OrderDetails.Total".Localized())</strong>
-                                </td>
-                                <td colspan="1">
-                                    <span>
-                                        @Model.Order.FinalAmmount.WithCurrency()
+                                        @vatTotalAmount.WithCurrency()
                                     </span>
                                 </td>
                             </tr>
                         }
-                        </tfoot>
+                        <tr>
+
+
+                            <td colspan="4" class="text-right">
+                                <strong>@("Dashboard.OrderDetails.Total".Localized())</strong>
+                            </td>
+                            <td colspan="1">
+                                <span>
+                                    @Model.Order.FinalAmmount.WithCurrency()
+                                </span>
+                            </td>
+                        </tr>
+
+                    </tfoot>
                 </table>
             </li> 
            

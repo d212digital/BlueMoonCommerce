@@ -50,10 +50,10 @@
                                             <i class="ltr-dir" title="@("PP.Checkout.ItemQuantity".LocalizedString())">x @cartItem.Quantity</i> <span class="ltr-dir">@((productPrice * cartItem.Quantity).WithCurrency())</span>
                                         </li>
                                     }
-                                    <li class="fw-normal">
-                                        @("PP.Checkout.SubTotal".LocalizedString()) (Incl VAT)
+                                    @*<li class="fw-normal">
+                                        Item Totals (Incl VAT)
                                         <span class="ltr-dir">@Model.TotalAmount.WithCurrency()</span>
-                                    </li>
+                                    </li>*@
                                     <li class="fw-normal">
                                         @("PP.Checkout.Discount".LocalizedString())
                                         <span class="ltr-dir @(Model.PromoApplied ? "text-success" : string.Empty)">@Model.Discount.WithCurrency()</span>
@@ -75,11 +75,15 @@
                                         <span class="ltr-dir">@ConfigurationsHelper.FlatDeliveryCharges.WithCurrency()</span>
                                     </li>
                                     <li class="fw-normal">
-                                        VAT Total
+                                        Subtotal 
+                                        <span class="ltr-dir">@subTotalLessVat.WithCurrency()</span>
+                                    </li>
+                                    <li class="fw-normal">
+                                        VAT
                                         <span class="ltr-dir">@vatTotalAmount.WithCurrency()</span>
                                     </li>
                                     <li class="total-price">
-                                        @("PP.Checkout.Total".LocalizedString())
+                                        Order @("PP.Checkout.Total".LocalizedString())
                                         <span class="ltr-dir">@Model.FinalAmount.WithCurrency()</span>
                                     </li>
                                 </ul>

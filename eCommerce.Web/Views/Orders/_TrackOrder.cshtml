@@ -151,14 +151,14 @@
                                 }
                             </tbody>
                             <tfoot>
-                                <tr>
+                                @*<tr>
                                     <td colspan="4" class="text-right">
-                                        <strong>@("PP.Tracking.SubTotal".LocalizedString())</strong>
+                                        <strong>Item Totals (Incl Vat)</strong>
                                     </td>
                                     <td colspan="2" class="ltr-dir">
                                         @Model.Order.TotalAmmount.WithCurrency()
                                     </td>
-                                </tr>
+                                </tr>*@
                                 <tr>
                                     <td colspan="4" class="text-right">
                                         <strong>@("PP.Tracking.Discount".LocalizedString())</strong>
@@ -181,14 +181,37 @@
                                         @Model.Order.DeliveryCharges.WithCurrency()
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td colspan="4" class="text-right">
-                                        <strong>@("PP.Tracking.FinalTotal".LocalizedString())</strong>
-                                    </td>
-                                    <td colspan="2" class="ltr-dir">
-                                        @Model.Order.FinalAmmount.WithCurrency()
-                                    </td>
-                                </tr>
+                                @if (Model.Order.TotalAmmount > 0)
+                                {
+                                    var subTotalAmount = Model.Order.TotalAmmount;
+                                    var vatTotalAmount = Math.Round(subTotalAmount * ConfigurationsHelper.VatRate);
+                                    var subTotalLessVat = Math.Round(subTotalAmount - vatTotalAmount);
+                                    <tr>
+                                        <td colspan="4" class="text-right">
+                                            <strong>SubTotal (Excl VAT)</strong>
+                                        </td>
+                                        <td colspan="2" class="ltr-dir">
+                                            @subTotalLessVat.WithCurrency()
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4" class="text-right">
+                                            <strong>Total VAT</strong>
+                                        </td>
+                                        <td colspan="2" class="ltr-dir">
+                                            @vatTotalAmount.WithCurrency()
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        }
+                                        <td colspan="4" class="text-right">
+                                            <strong>Order Total</strong>
+                                        </td>
+                                        <td colspan="2" class="ltr-dir">
+                                            @Model.Order.FinalAmmount.WithCurrency()
+                                        </td>
+                                    </tr>
+                                }
                             </tfoot>
                         </table>
                     </div>

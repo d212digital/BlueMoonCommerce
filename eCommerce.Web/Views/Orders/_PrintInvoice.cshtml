@@ -62,12 +62,12 @@
                             <div class="card-body p-0">
                                 <div class="row p-5">
                                     <div class="col-md-6">
-                                        <h3>
+                                        <img class="mb-2" src="~/Content/images/site/logo-os.png" />
+                                        @*<h3>                                            
                                             @ConfigurationsHelper.ApplicationName
-                                        </h3>
-                                        <div class="small">@Html.Raw(ConfigurationsHelper.AddressLine1 + "<br />" + ConfigurationsHelper.AddressLine2)</div>
-                                        <br />
-                                        <div class="small">@ConfigurationsHelper.PhoneNumber, @ConfigurationsHelper.MobileNumber</div>
+                                        </h3>*@
+                                        <div class="small pt-2">@Html.Raw(ConfigurationsHelper.AddressLine1 + "<br />" + ConfigurationsHelper.AddressLine2)</div>
+                                        <div class="small">t. 0161 366 5552</div>
                                     </div>
 
                                     <div class="col-md-6 text-right">
@@ -87,21 +87,24 @@
 
                                 <div class="row pb-5 p-5">
                                     <div class="col-md-6">
-                                        <p class="font-weight-bold mb-4">@("PP.PrintInvoice.CustomerInformation".Localized())</p>
+                                        <p class="font-weight-bold mb-2">@("PP.PrintInvoice.CustomerInformation".Localized())</p>
 
                                         @if (!Model.Order.IsGuestOrder)
                                         {
                                             <p class="mb-1">
-                                                @Model.Order.CustomerName
-                                            </p>
-                                            <p>
-                                                @Model.Order.CustomerEmail, @Model.Order.CustomerPhone
+                                                @Model.Order.CustomerName                                          
                                                 <br />
                                                 @Model.Order.CustomerAddress
                                                 <br />
-                                                @Model.Order.CustomerCity, @Model.Order.CustomerCountry
+                                                @Model.Order.CustomerCity
+                                                <br />
+                                                @Model.Order.CustomerCountry
                                                 <br />
                                                 @Model.Order.CustomerZipCode
+                                                <br />
+                                                @Model.Order.CustomerEmail
+                                                <br />
+                                                @Model.Order.CustomerPhone
                                             </p>
                                         }
                                         else
@@ -184,37 +187,50 @@
                                         </div>
                                     </div>
                                 }
-                                <div class="d-flex flex-row-reverse p-4">
-                                    <div class="py-3 px-5 text-right">
-                                        <div class="mb-2">@("PP.PrintInvoice.TotalAmount".Localized())</div>
-                                        <div class="h2 font-weight-light ltr-dir" dir="ltr">
-                                            @Model.Order.TotalAmmount.WithCurrency()
-                                        </div>
-                                    </div>
+                                @if (Model.Order.TotalAmmount > 0)
+                                {
+                                    var subTotalAmount = Model.Order.TotalAmmount;
+                                    var vatTotalAmount = Math.Round(subTotalAmount * ConfigurationsHelper.VatRate);
+                                    var subTotalLessVat = Math.Round(subTotalAmount - vatTotalAmount);
 
-                                    <div class="py-3 px-5 text-right">
-                                        <div class="mb-2">@("PP.PrintInvoice.Discount".Localized())</div>
-                                        <div class="h2 font-weight-light ltr-dir" dir="ltr">
-                                            @Model.Order.Discount.WithCurrency()
-                                        </div>
+                            <div class="d-flex flex-row-reverse p-4">
+                                <div class="py-3 px-5 text-right">
+                                    <div class="mb-2">Order Total</div>
+                                    <div class="h2 font-weight-light ltr-dir" dir="ltr">
+                                        @Model.Order.TotalAmmount.WithCurrency()
                                     </div>
-
-                                    <div class="py-3 px-5 text-right">
-                                        <div class="mb-2">@("PP.PrintInvoice.ShippingCharges".Localized())</div>
-                                        <div class="h2 font-weight-light ltr-dir" dir="ltr">
-                                            @Model.Order.DeliveryCharges.WithCurrency()
-                                        </div>
-                                    </div>
-
-                                    <div class="py-3 px-5 text-right">
-                                        <div class="mb-2">@("PP.PrintInvoice.FinalAmount".Localized())</div>
-                                        <div class="h2 font-weight-light ltr-dir" dir="ltr">
-                                            @Model.Order.FinalAmmount.WithCurrency()
-                                        </div>
+                                </div>
+                                <div class="py-3 px-5 text-right">
+                                    <div class="mb-2">Vat Total</div>
+                                    <div class="h2 font-weight-light ltr-dir" dir="ltr">
+                                        @vatTotalAmount.WithCurrency()
                                     </div>
                                 </div>
 
+                                <div class="py-3 px-5 text-right">
+                                    <div class="mb-2">@("PP.PrintInvoice.Discount".Localized())</div>
+                                    <div class="h2 font-weight-light ltr-dir" dir="ltr">
+                                        @Model.Order.Discount.WithCurrency()
+                                    </div>
+                                </div>
+
+                                <div class="py-3 px-5 text-right">
+                                    <div class="mb-2">@("PP.PrintInvoice.ShippingCharges".Localized())</div>
+                                    <div class="h2 font-weight-light ltr-dir" dir="ltr">
+                                        @Model.Order.DeliveryCharges.WithCurrency()
+                                    </div>
+                                </div>
+
+                                <div class="py-3 px-5 text-right">
+                                    <div class="mb-2">Subtotal</div>
+                                    <div class="h2 font-weight-light ltr-dir" dir="ltr">
+                                        @subTotalLessVat.WithCurrency()
+                                    </div>
+                                </div>
                             </div>
+                                }
+
+                               </div>
                         </div>
                     </div>
                 }
