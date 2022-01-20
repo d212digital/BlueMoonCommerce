@@ -75,7 +75,7 @@
                                         <span class="ltr-dir">@ConfigurationsHelper.FlatDeliveryCharges.WithCurrency()</span>
                                     </li>
                                     <li class="fw-normal">
-                                        Subtotal 
+                                        Subtotal
                                         <span class="ltr-dir">@subTotalLessVat.WithCurrency()</span>
                                     </li>
                                     <li class="fw-normal">
@@ -86,11 +86,13 @@
                                         Order @("PP.Checkout.Total".LocalizedString())
                                         <span class="ltr-dir">@Model.FinalAmount.WithCurrency()</span>
                                     </li>
+                                    <li>
+                                    <div class="my-2 small">
+                                        <i class="@(AppDataHelper.IsRTL ? "pl-2" : "pr-2") fas fa-cart-arrow-down"></i>
+                                        <a href="@Url.Cart()" class="text-info mt-3 text-capitalize">@("PP.Checkout.ModifyCartItemsHere".LocalizedString())</a>
+                                    </div>
+                                    </li>
                                 </ul>
-                                <div class="my-2 small">
-                                    <i class="@(AppDataHelper.IsRTL ? "pl-2" : "pr-2") fas fa-cart-arrow-down"></i>
-                                    <a href="@Url.Cart()" class="text-info mt-3 text-capitalize">@("PP.Checkout.ModifyCartItemsHere".LocalizedString())</a>
-                                </div>
                             </div>
                         </div>
                     </div>
